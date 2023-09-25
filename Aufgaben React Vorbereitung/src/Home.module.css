@@ -1,77 +1,239 @@
-
 body {
-  background-image: url(../src/Coffee.jpg);
-  filter: brightness(70%);
-  background-size: cover;
-  background-position: center center;
-  height: 100vh;
-  width: 100%;
+background-image: url(../src/Coffee.jpg);
+background-size: cover;
+background-position: center center;
+width: 100%;
 }
 
-.navbar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
+body>div {
+min-height: 100vh;
+width: 100%;
+display: flex;
+flex-direction: column;
+background-color: rgba(0, 0, 0, 0.395);
 }
 
-.navbar li {
-  display: inline-block;
-  margin-right: 10px;
-  margin-top: 16px;
-}
-
-.navbar li a {
-  display: inline-block;
-  padding: 5px 15px;
-  background-color: white;
-  color: #333;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-.title {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.subtitle {
-  text-align: center;
-  font-size: 16px;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.search-bar {
-  text-align: left;
-  margin-bottom: 75px;
-  position: fixed;
-  top: 16px;
-  left: 16px;
+* {
+text-decoration: none;
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+list-style: none;
+color: white;
 }
 
 .search-bar input[type="text"] {
+padding: 8px;
+width: 200px;
+border-radius: 10px;
+height: 35px;
+border: 1px solid #ccc;
+background-color: white;
+color: black;
+}
+
+.TOSHOP {
+padding: 8px;
+width: 200px;
+border-radius: 10px;
+background-color: #37af15;
+text-align: center;
+cursor: pointer;
+height: 35px;
+display: flex;
+align-items: center;
+}
+
+.TOSHOP a {
+width: 100%;
+}
+
+header {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+padding: 1rem 5%;
+background: rgb(43, 129, 40);
+background: linear-gradient(156deg, rgba(43, 129, 40, 1) 0%, rgba(255, 187, 0, 1) 100%);
+backdrop-filter: blur(10px);
+}
+
+section.Landing {
+justify-content: center;
+align-items: center;
+}
+
+
+
+
+
+
+
+
+.div > header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 5%;
+  background: rgb(43, 129, 40);
+  background: linear-gradient(
+    156deg,
+    rgba(43, 129, 40, 1) 0%,
+    rgba(255, 187, 0, 1) 100%
+  );
+  backdrop-filter: blur(10px);
+}
+
+.div > header .navbar ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.div > header .navbar ul li {
+  border-radius: 10px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+}
+
+.div > header .navbar ul li a {
+  position: relative;
+}
+
+.div > header .navbar ul li a::before {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 120%;
+  border-radius: 0px;
+  background-color: #e46d0ce6;
+  z-index: -1;
+  bottom: -10%;
+  left: -20%;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.div > header .navbar ul li a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.div > header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 5%;
+  background: rgb(43, 129, 40);
+  background: linear-gradient(
+    156deg,
+    rgba(43, 129, 40, 1) 0%,
+    rgba(255, 187, 0, 1) 100%
+  );
+  backdrop-filter: blur(10px);
+}
+
+.div > header .navbar ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.div > header .navbar ul li {
+  border-radius: 10px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+}
+
+.div > header .navbar ul li a {
+  position: relative;
+}
+
+.div > header .navbar ul li a::before {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 120%;
+  border-radius: 0px;
+  background-color: #e46d0ce6;
+  z-index: -1;
+  bottom: -10%;
+  left: -20%;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.div > header .navbar ul li a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.div > .body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.395);
+}
+
+.div > .body .search-bar input[type="text"] {
   padding: 8px;
   width: 200px;
-  border-radius: 4px;
+  border-radius: 10px;
+  height: 35px;
   border: 1px solid #ccc;
+  background-color: white;
+  color: black;
 }
 
-.shop-button {
-  display: block;
-  width: 120px;
-  margin: 0 auto;
+.div > .body .TOSHOP {
+  padding: 8px;
+  width: 200px;
+  border-radius: 10px;
+  background-color: #37af15;
   text-align: center;
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
+  cursor: pointer;
+  height: 35px;
+  display: flex;
+  align-items: center;
 }
 
-.shop-button:hover {
-  background-color: #555;
+.div > .body .TOSHOP a {
+  width: 100%;
 }
+
+.div > .body > section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.div > .body > section:first-child {
+  min-height: calc(100vh - 70px);
+}
+
+.div > .body > section.landing {
+  justify-content: center;
+  align-items: center;
+}
+
+.div > .body > section.landing .Home-Block {
+  transform: translateY(-50px);
+  background: rgb(43, 129, 40);
+  background: linear-gradient(156deg, #2b8128 0%, #ffbb00 100%);
+  padding: 20px;
+}
+
+.div > .body > section.landing .Home-Block {
+  transform: translateY(-50px);
+  background: rgb(43, 129, 40);
+  background: linear-gradient(156deg, #2b8128 0%, #ffbb00 100%);
+  padding: 20px;
+}
+
