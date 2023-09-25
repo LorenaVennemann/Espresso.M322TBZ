@@ -1,33 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import "../Home.css";
+import logo from "../Logo.jpg";
+import classes from "../AboutUs.module.css";
 
-const AboutUs: React.FC = () => {
-  return (
-    <div>
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About Us</Link>
-        </li>
-        <li>
-          <Link to="/blog">Blog</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
-        <li>
-          <Link to="/shop">Shop</Link>
-        </li>
-      </ul>
-    </nav>
-      <h1>Über uns</h1>
-      <p>Wir sind ein leidenschaftliches Team von Kaffeeliebhabern, das sich dem Ziel verschrieben hat, die besten Kaffeesorten aus aller Welt anzubieten. Erfahren Sie mehr über unsere Geschichte und unsere Mission, Ihnen das beste Kaffeeerlebnis zu bieten.</p>
-    </div>
-  );
+const AboutUs = () => {
+    return (
+        <>
+            <div className={classes.upperHalf}>
+                <h1 className={classes.h1}>About Us</h1>
+                <img className={classes.img} src={logo} alt="Espresso Oasis Logo" />
+                <p className={classes.p}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div className={classes.lowerHalf}>
+            </div>
+        </>
+    );
 };
 
 export default AboutUs;
+
