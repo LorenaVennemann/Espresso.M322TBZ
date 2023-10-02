@@ -201,6 +201,7 @@ align-items: center;
   height: 35px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .div > .body .TOSHOP a {
@@ -228,12 +229,8 @@ align-items: center;
   background: rgb(43, 129, 40);
   background: linear-gradient(156deg, #2b8128 0%, #ffbb00 100%);
   padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-.div > .body > section.landing .Home-Block {
-  transform: translateY(-50px);
-  background: rgb(43, 129, 40);
-  background: linear-gradient(156deg, #2b8128 0%, #ffbb00 100%);
-  padding: 20px;
-}
-
