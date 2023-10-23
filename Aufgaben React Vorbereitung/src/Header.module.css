@@ -1,17 +1,4 @@
-body {
-background-image: url(../src/Coffee.jpg);
-background-size: cover;
-background-position: center center;
-width: 100%;
-}
-
-body>div {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: #47533f3e;
-}
-
+/* HEADER SECTION START */
 * {
   text-decoration: none;
   box-sizing: border-box;
@@ -58,11 +45,8 @@ header {
   padding: 1rem 5%;
   background: #E1D9D0;
   backdrop-filter: blur(10px);
-}
-
-section.Landing {
-  justify-content: center;
-  align-items: center;
+  position: fixed;
+  width: 100%;
 }
 
 header {
@@ -108,78 +92,4 @@ header .navbar ul li a::before {
 header .navbar ul li a:hover::before {
   transform-origin: left;
   transform: scaleX(1);
-}
-
-.div {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: #47533f3f;
-}
-
-.div .search-bar input[type="text"] {
-  padding: 8px;
-  width: 200px;
-  border-radius: 10px;
-  height: 35px;
-  border: 1px solid #ccc;
-  background-color: white;
-  color: black;
-}
-
-.div .TOSHOP {
-  padding: 8px;
-  width: 200px;
-  border-radius: 10px;
-  background-color: #5C921C;
-  text-align: center;
-  cursor: pointer;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.div .TOSHOP a {
-  width: 100%;
-  color: #EEE5DB !important;
-}
-
-section {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-section:first-child {
-  min-height: calc(100vh - 70px);
-}
-
-section.landing {
-  justify-content: center;
-  align-items: center;
-}
-
-section.landing .Home-Block {
-  transform: translateY(-50px);
-  background-color: #EEE5DB;
-  padding: 20px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-section.landing .Home-Block a {
-  color: #EEE5DB;
-  border: 2px solid #5C921C;
-  text-transform: uppercase;
-}
-
-section.landing .Home-Block a:hover {
-  color: #5C921C;
-  background-color: #EEE5DB;
-  border: 2px solid #5C921C;
-
 }

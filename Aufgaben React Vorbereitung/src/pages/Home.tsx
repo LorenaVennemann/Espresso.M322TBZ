@@ -33,18 +33,15 @@ const Home: React.FC = () => {
           </Link>
         </div>
       </header>
-
-      <div className={classes.body}>
-        <section className={classes.landing}>
-          <div className={classes["Home-Block"]}>
-            <h1 className={classes.title}>Espresso Oase</h1>
-            <p className={classes.subtitle}>by Cameron Meile & Lorena Vennemann</p>
-            <Link className={`${classes["TOSHOP"]}`} to="/shop">
-              Shop
-            </Link>
-          </div>
-        </section>
-      </div>
+      <section className={classes.landing}>
+        <div className={classes["Home-Block"]}>
+          <h1 className={classes.title}>Espresso Oase</h1>
+          <p className={classes.subtitle}>by Cameron Meile & Lorena Vennemann</p>
+          <Link className={`${classes["TOSHOP"]}`} to="/shop">
+            Shop
+          </Link>
+        </div>
+      </section>  
     </div>
   );
 };

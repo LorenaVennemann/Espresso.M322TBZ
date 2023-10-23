@@ -1,0 +1,21 @@
+.textbox-start,
+.textbox-center,
+.textbox-end {
+    display: flex;
+    flex-direction: column;
+}
+
+.textbox-start {
+    align-items: start;
+    text-align: start;
+}
+
+.textbox-start {
+    align-items: center;
+    text-align: center;
+}
+
+.textbox-end {
+    align-items: end;
+    text-align: end;
+}

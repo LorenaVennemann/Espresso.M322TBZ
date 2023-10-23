@@ -1,16 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import classes from "../Home.module.css";
+import classes from "../Header.module.css";
+import "../Header.module.css";
 
 const Home: React.FC = () => {
   return (
-    <div className="container">
+    <div className={classes.div}>
       <header>
-        <div className="search-bar">
+        <div className={`${classes["search-bar"]}`}>
           <input type="text" placeholder="Search..." />
         </div>
 
-        <nav className="navbar">
+        <nav className={classes.navbar}>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -27,8 +28,8 @@ const Home: React.FC = () => {
           </ul>
         </nav>
 
-        <div className="TOSHOP">
-          <Link className="TOSHOP-link" to="/shop">
+        <div className={classes.TOSHOP}>
+          <Link className={`${classes["TOSHOP-link"]}`} to="/shop">
             Shop
           </Link>
         </div>
@@ -36,15 +37,7 @@ const Home: React.FC = () => {
 
       <div className="body">
         <section className="landing">
-          <div className="Home-Block">
-            <h1 className="title">Espresso Oase</h1>
-            <p className="subtitle">by Cameron Meile & Lorena Vennemann</p>
-            <Link to="/shop" className="Link">
-              Shop
-            </Link>
-          </div>
         </section>
-        <section></section>
       </div>
     </div>
   );
