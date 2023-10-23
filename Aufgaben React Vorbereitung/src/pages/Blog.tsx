@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import classes from "../Header.module.css";
-import "../Header.module.css"
+import classes from "../Root.module.css";
+import "../Root.module.css";
 
 const Blog: React.FC = () => {
   return (
@@ -34,10 +34,14 @@ const Blog: React.FC = () => {
           </Link>
         </div>
       </header>
-      
-    <section>
-      <h1>hallo</h1>
-    </section>
+
+      <main>
+
+        <section>
+          <h1>hallo</h1>
+        </section>
+
+      </main>
 
     </div>
   );

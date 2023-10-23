@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../logo.svg';
-import classes from '../Header.module.css';
-import "../Header.module.css"
+import classes from "../Root.module.css";
+import "../Root.module.css";
 import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
@@ -35,12 +35,13 @@ const AboutUs = () => {
           </Link>
         </div>
       </header>
-      <section>
-        <div className="textbox-center">
-          <h1>Title</h1>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, ab mollitia. Iusto culpa blanditiis molestias pariatur, enim dolor, quaerat, qui praesentium mollitia nostrum porro earum suscipit officiis rerum doloremque ut!</p>
-        </div>
-      </section>
+
+      <main>
+        <section className="textbox-center">
+            <h1>Title</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, ab mollitia. Iusto culpa blanditiis molestias pariatur, enim dolor, quaerat, qui praesentium mollitia nostrum porro earum suscipit officiis rerum doloremque ut!</p>
+        </section>
+      </main>
     </div>
   );
 };

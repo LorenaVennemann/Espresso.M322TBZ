@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import classes from "../Header.module.css";
-import "../Header.module.css";
+import classes from "../Root.module.css";
+import "../Root.module.css";
 
 const Home: React.FC = () => {
   return (
@@ -35,10 +35,13 @@ const Home: React.FC = () => {
         </div>
       </header>
 
-      <div className="body">
-        <section className="landing">
-        </section>
-      </div>
+      <main>
+
+          <section>
+            <h1>hiowjqdwoid</h1>
+          </section>
+
+      </main>
     </div>
   );
 };

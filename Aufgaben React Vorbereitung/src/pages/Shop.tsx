@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "../Home.module.css";
+import "../Root.module.css";
 
 const Shop: React.FC = () => {
   return (

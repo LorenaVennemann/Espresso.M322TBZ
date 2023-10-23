@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import classes from "../Home.module.css";
+import classes from "../Root.module.css";
+import "../Root.module.css";
 
 const Home: React.FC = () => {
   return (
@@ -33,15 +34,17 @@ const Home: React.FC = () => {
           </Link>
         </div>
       </header>
-      <section className={classes.landing}>
-        <div className={classes["Home-Block"]}>
-          <h1 className={classes.title}>Espresso Oase</h1>
-          <p className={classes.subtitle}>by Cameron Meile & Lorena Vennemann</p>
+      <main>
+
+        <section className={classes.textbox_center}>
+          <h1>Expresso Oase</h1>
+          <p>Willkommen in der Oase! Genisessen Sie leckere Bohnen aus Aller Welt.</p>
           <Link className={`${classes["TOSHOP"]}`} to="/shop">
-            Shop
+            Zum Shop
           </Link>
-        </div>
-      </section>  
+        </section>
+
+      </main>
     </div>
   );
 };
