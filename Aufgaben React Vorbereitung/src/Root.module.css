@@ -48,12 +48,16 @@ section {
     padding: 8px;
     width: 200px;
     border-radius: 10px;
-    background-color: #5C921C;
+    background-color: #90a774;
     text-align: center;
     cursor: pointer;
     height: 35px;
     display: flex;
     justify-content: center;
+  }
+
+  .TOSHOP:hover {
+    background-color: #5C921C;
   }
   
   .TOSHOP a {
@@ -119,6 +123,43 @@ section {
     transform: scaleX(1);
   }
 /* ========================= */
+/* FOOTER */
+footer.footer {
+    height: 50px;
+    background-color: #E1D9D0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer.footer h1 {
+    font-size: 1rem;
+}
+
+/* FULL WIDTH IMAGE */
+.image_full {
+    width: 100%;
+    padding: 0px !important;
+    height: 250px;
+    position: relative;
+}
+
+.image_full img {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+}
+
+.image_full .middle_image {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 100%;
+}
+
 
 /* TEXT BOX CLASSES */
 .textbox_start,
@@ -128,9 +169,16 @@ section {
     flex-direction: column;
 }
 
+.textbox_start h1,
+.textbox_center h1,
+.textbox_end h1 {
+    font-size: 2rem;
+}
+
 .textbox_start p,
 .textbox_center p,
 .textbox_end p {
+    font-size: 1.2rem;
     width: 50%;
 }
 
@@ -157,3 +205,67 @@ section {
 }
 
 /* TEXT WITH IMAGE */
+.textbox_image_start,
+.textbox_image_end {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+
+.textbox_image_start .image,
+.textbox_image_end .image {
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.textbox_image_start .image img,
+.textbox_image_end .image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.textbox_image_start .textbox,
+.textbox_image_end .textbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.textbox_image_start .textbox h1,
+.textbox_image_end .textbox h1 {
+    font-size: 2rem;
+}
+
+.textbox_image_start .textbox p,
+.textbox_image_end .textbox p {
+    font-size: 1.2rem;
+}
+
+.textbox_image_start .textbox {
+    align-items: start;
+    text-align: start;
+}
+
+.textbox_image_end .textbox {
+    align-items: end;
+    text-align: end;
+}
+
+/* FOUR SECTOR BOXES */
+.four_textboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.four_textboxes .textbox {
+    width: calc(25% - 50px);
+}
+
+.four_textboxes .textbox img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}

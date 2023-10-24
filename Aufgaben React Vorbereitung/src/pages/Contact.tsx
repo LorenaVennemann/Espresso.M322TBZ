@@ -17,7 +17,7 @@ const Home: React.FC = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">AboutUs</Link>
+              <Link to="/about">About Us</Link>
             </li>
             <li>
               <Link to="/blog">Blog</Link>
@@ -40,6 +40,10 @@ const Home: React.FC = () => {
           <section>
             <h1>hiowjqdwoid</h1>
           </section>
+
+          <footer className={classes.footer}>
+          <h1>Expresso Oase © 2023 ExpressoOase.com</h1>
+        </footer>
 
       </main>
     </div>
