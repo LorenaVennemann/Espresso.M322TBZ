@@ -1,21 +1,272 @@
-.textbox-start,
-.textbox-center,
-.textbox-end {
+/* ROOT */
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 500;
+    color: #1C3033;
+    transition: all ease 0.5s;
+}
+
+main {
+    padding-top: 65px;
+}
+
+/* main.bg {
+background-image: ;    
+} */
+
+section {
+    padding: 20px 5%;
+}
+
+/* HEADER SECTION START */
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 500;
+    color: #1C3033;
+    transition: all ease 0.5s;
+  }
+  
+  .search-bar input[type="text"] {
+    padding: 8px;
+    width: 200px;
+    border-radius: 10px;
+    height: 35px;
+    border: 1px solid #ccc;
+    background-color: white;
+    color: black;
+  }
+  
+  .TOSHOP {
+    padding: 8px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: #90a774;
+    text-align: center;
+    cursor: pointer;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .TOSHOP:hover {
+    background-color: #5C921C;
+  }
+  
+  .TOSHOP a {
+    width: 100%;
+    color: white !important;
+    text-align: center;
+  }
+  
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    background: #E1D9D0;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    backdrop-filter: blur(10px);
+  }
+  
+  header .navbar ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  header .navbar ul li {
+    border-radius: 10px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+  }
+  
+  header .navbar ul li a {
+    position: relative;
+  }
+  
+  header .navbar ul li a::before {
+    content: "";
+    position: absolute;
+    width: 140%;
+    height: 120%;
+    border-radius: 0px;
+    background-color: #5C921C;
+    z-index: -1;
+    bottom: -10%;
+    left: -20%;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  header .navbar ul li a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+/* ========================= */
+/* FOOTER */
+footer.footer {
+    height: 50px;
+    background-color: #E1D9D0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer.footer h1 {
+    font-size: 1rem;
+}
+
+/* FULL WIDTH IMAGE */
+.image_full {
+    width: 100%;
+    padding: 0px !important;
+    height: 250px;
+    position: relative;
+}
+
+.image_full img {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+}
+
+.image_full .middle_image {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 100%;
+}
+
+
+/* TEXT BOX CLASSES */
+.textbox_start,
+.textbox_center,
+.textbox_end {
     display: flex;
     flex-direction: column;
 }
 
-.textbox-start {
+.textbox_start h1,
+.textbox_center h1,
+.textbox_end h1 {
+    font-size: 2rem;
+}
+
+.textbox_start p,
+.textbox_center p,
+.textbox_end p {
+    font-size: 1.2rem;
+    width: 50%;
+}
+
+.textbox_start .TOSHOP,
+.textbox_center .TOSHOP,
+.textbox_end .TOSHOP {
+    margin-top: 20px;
+    color: white;
+}
+
+.textbox_start {
     align-items: start;
     text-align: start;
 }
 
-.textbox-start {
+.textbox_center {
     align-items: center;
     text-align: center;
 }
 
-.textbox-end {
+.textbox_end {
     align-items: end;
     text-align: end;
+}
+
+/* TEXT WITH IMAGE */
+.textbox_image_start,
+.textbox_image_end {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+
+.textbox_image_start .image,
+.textbox_image_end .image {
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.textbox_image_start .image img,
+.textbox_image_end .image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.textbox_image_start .textbox,
+.textbox_image_end .textbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.textbox_image_start .textbox h1,
+.textbox_image_end .textbox h1 {
+    font-size: 2rem;
+}
+
+.textbox_image_start .textbox p,
+.textbox_image_end .textbox p {
+    font-size: 1.2rem;
+}
+
+.textbox_image_start .textbox {
+    align-items: start;
+    text-align: start;
+}
+
+.textbox_image_end .textbox {
+    align-items: end;
+    text-align: end;
+}
+
+/* FOUR SECTOR BOXES */
+.four_textboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.four_textboxes .textbox {
+    width: calc(25% - 50px);
+}
+
+.four_textboxes .textbox img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
 }

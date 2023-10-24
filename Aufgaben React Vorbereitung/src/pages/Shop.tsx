@@ -6,8 +6,12 @@ import productImage2 from '../Coffee3.png'
 import classes from  "../Header.module.css"
 import "../Header.module.css"
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 const Shop = () => {
    
+=======
+import "../Root.module.css";
+>>>>>>> 5cd04d6f1f48f545cc06b603db3717cd55bcf9d1
 
   const products = [
     { id: '1', name: 'Lavazza-Coffee', price: '€12.85', image: productImage, origin: 'Italy', strength: 'Strong' },

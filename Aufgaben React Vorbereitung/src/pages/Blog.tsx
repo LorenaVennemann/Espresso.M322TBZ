@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import classes from "../Header.module.css";
-import "../Header.module.css"
+import classes from "../Root.module.css";
+import "../Root.module.css";
 
 const Blog: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ const Blog: React.FC = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">AboutUs</Link>
+              <Link to="/about">About Us</Link>
             </li>
             <li>
               <Link to="/blog">Blog</Link>
@@ -34,10 +34,22 @@ const Blog: React.FC = () => {
           </Link>
         </div>
       </header>
-      
-    <section>
-      <h1>hallo</h1>
-    </section>
+
+      <main>
+
+      <section className={classes.image_full}>
+          <img src="https://cdn.pixabay.com/photo/2016/04/12/11/19/coffee-1324126_1280.jpg" alt="" />
+        </section>
+
+        <section>
+          <h1>hallo</h1>
+        </section>
+
+        <footer className={classes.footer}>
+          <h1>Expresso Oase © 2023 ExpressoOase.com</h1>
+        </footer>
+
+      </main>
 
     </div>
   );
