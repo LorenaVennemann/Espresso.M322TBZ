@@ -3,15 +3,11 @@ import styles from '../Shop.module.css';
 import productImage from '../Coffee1.jpg';
 import productImage1 from '../Caffee2.jpg'
 import productImage2 from '../Coffee3.png'
-import classes from  "../Header.module.css"
-import "../Header.module.css"
+import classes from "../Root.module.css";
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
 const Shop = () => {
    
-=======
-import "../Root.module.css";
->>>>>>> 5cd04d6f1f48f545cc06b603db3717cd55bcf9d1
+
 
   const products = [
     { id: '1', name: 'Lavazza-Coffee', price: '€12.85', image: productImage, origin: 'Italy', strength: 'Strong' },
@@ -52,6 +48,10 @@ import "../Root.module.css";
           </ul>
         </nav>
       </header>
+
+      <main>
+
+        <section>
             <div className={styles.filter}>
                 <select onChange={(e) => setFilter({ ...filter, origin: e.target.value })}>
                     <option value="">All origins</option>
@@ -65,8 +65,12 @@ import "../Root.module.css";
                     <option value="Medium">Medium</option>
                     <option value="Light">Light</option>
                 </select>
+                
             </div>
+          </section>
             <input type="text" placeholder="Search.." />
+
+            <section>
             <div className={styles.container}>
                 {filteredProducts.map((product) => (
                     <div key={product.id} className={styles.product}>
@@ -77,6 +81,8 @@ import "../Root.module.css";
                     </div>
                 ))}
             </div>
+            </section>
+            </main>
         </div>
     );
 };

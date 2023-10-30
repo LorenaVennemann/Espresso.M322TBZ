@@ -51,24 +51,24 @@ const Home: React.FC = () => {
 
         <section className={classes.four_textboxes}>
           <div className={classes.textbox}>
-            <img src="https://cdn.pixabay.com/photo/2016/03/30/21/59/coffee-beans-1291656_1280.jpg" alt="" />
-            <h1>Title</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio minima illo dolor natus, ipsa voluptates suscipit blanditiis exercitationem excepturi distinctio possimus quasi asperiores facere architecto officia recusandae atque fuga. Aperiam.</p>
+            <img src="https://kaffeezentrale.com/media/4c/17/b6/1686771659/GV-1-1.jpg" alt="" />
+            <h1>ILLYCAFÉ GOURMET VENEZIA</h1>
+            <p>100% Arabica. For espresso and café crème Illycafé offers something special.</p>
           </div>
           <div className={classes.textbox}>
-            <img src="https://cdn.pixabay.com/photo/2016/03/30/21/59/coffee-beans-1291656_1280.jpg" alt="" />
-            <h1>Title</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio minima illo dolor natus, ipsa voluptates suscipit blanditiis exercitationem excepturi distinctio possimus quasi asperiores facere architecto officia recusandae atque fuga. Aperiam.</p>
+            <img src="https://kaffeezentrale.com/media/23/db/09/1687380190/DI04-1.jpg " alt="" />
+            <h1>DIEMME MISCELA BLU</h1>
+            <p>100% Arabica. Simply unbelievable what is in this Caffè.The alchemists from</p>
           </div>
           <div className={classes.textbox}>
-            <img src="https://cdn.pixabay.com/photo/2016/03/30/21/59/coffee-beans-1291656_1280.jpg" alt="" />
-            <h1>Title</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio minima illo dolor natus, ipsa voluptates suscipit blanditiis exercitationem excepturi distinctio possimus quasi asperiores facere architecto officia recusandae atque fuga. Aperiam.</p>
+            <img src="https://kaffeezentrale.com/media/a0/5b/14/1687380186/CI02-1.jpg" alt="" />
+            <h1>CHICCO D'ORO TRADITION</h1>
+            <p>The pleasantly light acidity of this coffee never pushes itself to the fore. The taste</p>
           </div>
           <div className={classes.textbox}>
-            <img src="https://cdn.pixabay.com/photo/2016/03/30/21/59/coffee-beans-1291656_1280.jpg" alt="" />
-            <h1>Title</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio minima illo dolor natus, ipsa voluptates suscipit blanditiis exercitationem excepturi distinctio possimus quasi asperiores facere architecto officia recusandae atque fuga. Aperiam.</p>
+            <img src="https://kaffeezentrale.com/media/45/25/ce/1687546010/TF01-1.jpg" alt="" />
+            <h1>TRE FORZE ESPRESSO</h1>
+            <p>95% Arabica. Slowly roasted on an open olive wood fire.Trinacria Since ancient</p>
           </div>
         </section>
 
