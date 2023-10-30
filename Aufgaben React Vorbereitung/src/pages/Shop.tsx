@@ -3,19 +3,9 @@ import styles from '../Shop.module.css';
 import productImage from '../Coffee1.jpg';
 import productImage1 from '../Caffee2.jpg'
 import productImage2 from '../Coffee3.png'
-<<<<<<< HEAD
 import classes from "../Root.module.css";
 import { Link } from 'react-router-dom';
 const Shop = () => {
-   
-
-=======
-import classes from "../Root.module.css"
-import "../Root.module.css"
-import { Link } from 'react-router-dom';
-
-const Shop = () => {
->>>>>>> 6b8b3ea9d0486c653f00ca3d7107787fda4812b4
 
   const products = [
     { id: '1', name: 'Lavazza-Coffee', price: '€12.85', image: productImage, origin: 'Italy', strength: 'Strong' },
@@ -60,7 +50,6 @@ const Shop = () => {
       <main>
 
         <section>
-<<<<<<< HEAD
             <div className={styles.filter}>
                 <select onChange={(e) => setFilter({ ...filter, origin: e.target.value })}>
                     <option value="">All origins</option>
@@ -94,43 +83,5 @@ const Shop = () => {
             </main>
         </div>
     );
-=======
-
-          <div className={styles.filter}>
-            <select onChange={(e) => setFilter({ ...filter, origin: e.target.value })}>
-              <option value="">All origins</option>
-              <option value="Italy">Italy</option>
-              <option value="Spain">Spain</option>
-              <option value="Germany">Germany</option>
-            </select>
-            <select onChange={(e) => setFilter({ ...filter, strength: e.target.value })}>
-              <option value="">All strengths</option>
-              <option value="Strong">Strong</option>
-              <option value="Medium">Medium</option>
-              <option value="Light">Light</option>
-            </select>
-          </div>
-          <input type="text" placeholder="Search.." />
-
-        </section>
-
-        <section>
-          <div className={styles.container}>
-            {filteredProducts.map((product) => (
-              <div key={product.id} className={styles.product}>
-                <img src={product.image} alt={product.name} />
-                <h2>{product.name}</h2>
-                <p>{product.price}</p>
-                <button>Add to Cart</button>
-              </div>
-            ))}
-          </div>
-        </section>
-
-      </main>
-
-    </div>
-  );
->>>>>>> 6b8b3ea9d0486c653f00ca3d7107787fda4812b4
 };
 export default Shop;
