@@ -5,12 +5,12 @@ import productImage1 from '../Caffee2.jpg'
 import productImage2 from '../Coffee3.png'
 import classes from "../Root.module.css";
 import warenkorbImage from '../warenkorb.png';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
 const Shop = () => {
-  const history = useHistory();
+  /* const history = useHistory(); */
   const products = [
     { id: '1', name: 'Lavazza-Coffee', price: '€12.85', image: productImage, origin: 'Italy', strength: 'Strong' },
     { id: '2', name: 'Torro-Espresso', price: '€10.95', image: productImage1, origin: 'Spain', strength: 'Medium' },
@@ -43,7 +43,7 @@ const Shop = () => {
     cart.push(product);
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    history.push('/warenkorb');
+    /* history.push('/warenkorb'); */
   };
   
   
@@ -70,13 +70,16 @@ const Shop = () => {
             <li>
               <Link to="/contact">Contact</Link>
             </li>
-            <li>
-  <Link to="/warenkorb">
-    <img src={warenkorbImage} alt="Warenkorb" />
-  </Link>
-</li>
           </ul>
         </nav>
+
+        <div className={classes.Nav_End}>
+          <div>
+            <Link className={classes.Button} to="/warenkorb">
+              <img src={warenkorbImage} alt="Warenkorb" />
+            </Link>
+          </div>
+        </div>
       </header>
 
       <main>

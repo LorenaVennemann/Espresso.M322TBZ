@@ -62,8 +62,8 @@ section {
   
   .TOSHOP a {
     width: 100%;
-    color: white !important;
     text-align: center;
+    font-weight: 500;
   }
   
   header {
@@ -122,6 +122,32 @@ section {
   header .navbar ul li a:hover::before {
     transform-origin: left;
     transform: scaleX(1);
+  }
+
+  .Nav_End {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .Nav_End a.Button {
+    display: block;
+    height: 100%;
+    width: 50px;
+    text-align: center;
+    padding: 5px 0px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #90a774;
+  }
+
+  .Nav_End a.Button:hover {
+    background-color: #5C921C;
+  }
+
+  .Nav_End img {
+    height: 20px;
   }
 /* ========================= */
 /* FOOTER */
@@ -187,7 +213,6 @@ footer.footer h1 {
 .textbox_center .TOSHOP,
 .textbox_end .TOSHOP {
     margin-top: 20px;
-    color: white;
 }
 
 .textbox_start {

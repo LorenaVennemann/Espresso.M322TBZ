@@ -25,18 +25,20 @@ const Home: React.FC = () => {
             <li>
               <Link to="/contact">Contact</Link>
             </li>
-            <li>
-  <Link to="/warenkorb">
-    <img src={warenkorbImage} alt="Warenkorb" />
-  </Link>
-</li>
           </ul>
         </nav>
 
-        <div className={classes.TOSHOP}>
-          <Link className={`${classes["TOSHOP-link"]}`} to="/shop">
-            Shop
-          </Link>
+        <div className={classes.Nav_End}>
+          <div className={classes.TOSHOP}>
+            <Link className={`${classes["TOSHOP-link"]}`} to="/shop">
+              Shop
+            </Link>
+          </div>
+          <div>
+            <Link className={classes.Button} to="/warenkorb">
+              <img src={warenkorbImage} alt="Warenkorb" />
+            </Link>
+          </div>
         </div>
       </header>
       <main>

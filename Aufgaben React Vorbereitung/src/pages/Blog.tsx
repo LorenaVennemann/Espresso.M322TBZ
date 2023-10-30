@@ -18,32 +18,34 @@ const Blog: React.FC = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">Über Uns</Link>
+              <Link to="/about">About Us</Link>
             </li>
             <li>
               <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <Link to="/contact">Kontakt</Link>
+              <Link to="/contact">Contact</Link>
             </li>
-            <li>
-  <Link to="/warenkorb">
-    <img src={warenkorbImage} alt="Warenkorb" />
-  </Link>
-</li>
           </ul>
         </nav>
 
-        <div className={classes.TOSHOP}>
-          <Link className={`${classes["TOSHOP-link"]}`} to="/shop">
-            Shop
-          </Link>
+        <div className={classes.Nav_End}>
+          <div className={classes.TOSHOP}>
+            <Link className={`${classes["TOSHOP-link"]}`} to="/shop">
+              Shop
+            </Link>
+          </div>
+          <div>
+            <Link className={classes.Button} to="/warenkorb">
+              <img src={warenkorbImage} alt="Warenkorb" />
+            </Link>
+          </div>
         </div>
       </header>
 
       <main>
 
-      <section className={classes.image_full}>
+        <section className={classes.image_full}>
           <img src="https://cdn.pixabay.com/photo/2016/04/12/11/19/coffee-1324126_1280.jpg" alt="" />
         </section>
 
