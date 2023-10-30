@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import classes from "../Root.module.css";
 import "../Root.module.css";
+import "../Blog.module.css"
 
 const Blog: React.FC = () => {
   return (
@@ -17,13 +18,13 @@ const Blog: React.FC = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About Us</Link>
+              <Link to="/about">Über Uns</Link>
             </li>
             <li>
               <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact">Kontakt</Link>
             </li>
           </ul>
         </nav>
@@ -42,7 +43,26 @@ const Blog: React.FC = () => {
         </section>
 
         <section>
-          <h1>hallo</h1>
+          <h1>Willkommen auf unserem Blog!</h1>
+          <p>Hier finden Sie Neuigkeiten und Updates zu unserem Coffee-Shop sowie interessante Artikel rund um das Thema Kaffee.</p>
+
+          <h2>Der perfekte Kaffee für den Herbst</h2>
+
+          <p>Der Herbst ist da und mit ihm die kühleren Temperaturen und die wunderschönen Farben der Blätter. Was gibt es Schöneres, als an einem kühlen Herbstmorgen eine Tasse heißen Kaffee zu genießen?</p>
+
+          <p>Aber welcher Kaffee ist der beste für den Herbst? Hier sind einige unserer Favoriten:</p>
+
+          <ol>
+            <li><strong>Pumpkin Spice Latte:</strong> Dieser klassische Herbstkaffee ist ein Muss für alle, die den Geschmack von Kürbis und Gewürzen lieben. Probieren Sie es mit einem Schuss Vanillesirup für eine zusätzliche Süße.</li>
+
+            <li><strong>Caramel Macchiato:</strong> Dieser cremige Kaffee mit Karamellgeschmack ist perfekt für einen gemütlichen Herbstabend. Fügen Sie etwas Zimt hinzu, um ihm einen Hauch von Würze zu verleihen.</li>
+
+            <li><strong>Chai Latte:</strong> Dieser würzige Tee-Kaffee-Hybrid ist ein weiterer Favorit für den Herbst. Probieren Sie ihn mit einem Schuss Honig für eine natürliche Süße.</li>
+          </ol>
+
+          <p>Welcher Kaffee auch immer Sie wählen, vergessen Sie nicht, ihn mit einem leckeren Gebäck zu begleiten. Wir empfehlen unsere hausgemachten Muffins oder Scones.</p>
+
+          <p>Wir hoffen, dass Ihnen diese Empfehlungen gefallen haben. Besuchen Sie uns in unserem Coffee-Shop und probieren Sie unsere Herbstkaffees!</p>
         </section>
 
         <footer className={classes.footer}>

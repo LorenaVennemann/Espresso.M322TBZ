@@ -39,16 +39,16 @@ const AboutUs = () => {
       <main>
 
         <section className={classes.image_full}>
-          <img src="https://cdn.pixabay.com/photo/2016/04/12/11/19/coffee-1324126_1280.jpg" alt="" />
-          <img className={classes.middle_image} src="https://cdn.pixabay.com/photo/2017/06/20/22/14/man-2425121_1280.jpg" alt="" />
+          <img src="https://cdn.pixabay.com/photo/2016/04/12/11/19/coffee-1324126_1280.jpg" alt="Coffee Shop" />
+          <img className={classes.middle_image} src="https://cdn.pixabay.com/photo/2017/06/20/22/14/man-2425121_1280.jpg" alt="Coffee Shop Owner" />
         </section>
 
         <section></section>
         <section></section>
 
         <section className="textbox-center">
-          <h1>Title</h1>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, ab mollitia. Iusto culpa blanditiis molestias pariatur, enim dolor, quaerat, qui praesentium mollitia nostrum porro earum suscipit officiis rerum doloremque ut!</p>
+          <h1>Über Uns</h1>
+          <p>Wir sind ein kleiner, aber feiner Coffee-Shop in Zürich. Wir bieten eine große Auswahl an verschiedenen Kaffee an. Unser Ziel ist es, unseren Kunden ein einzigartiges Erlebnis zu bieten, das sie nicht so schnell vergessen werden.</p>
         </section>
 
         <footer className={classes.footer}>
@@ -60,4 +60,3 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
-

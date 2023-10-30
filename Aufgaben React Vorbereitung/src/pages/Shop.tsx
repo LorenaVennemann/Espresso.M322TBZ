@@ -11,9 +11,9 @@ const Shop = () => {
     { id: '1', name: 'Lavazza-Coffee', price: '€12.85', image: productImage, origin: 'Italy', strength: 'Strong' },
     { id: '2', name: 'Torro-Espresso', price: '€10.95', image: productImage1, origin: 'Spain', strength: 'Medium' },
     { id: '3', name: 'Mövenpick-Coffee', price: '€9.99', image: productImage2, origin: 'Germany', strength: 'Light' },
-    { id: '1', name: 'Segafredo', price: '€12.85', image: productImage, origin: 'Italy', strength: 'Strong' },
-    { id: '2', name: 'Saimaze', price: '€10.95', image: productImage1, origin: 'Spain', strength: 'Medium' },
-    { id: '3', name: 'Dallmayr', price: '€9.99', image: productImage2, origin: 'Germany', strength: 'Light' }
+    { id: '4', name: 'Segafredo', price: '€12.85', image: productImage, origin: 'Italy', strength: 'Strong' },
+    { id: '5', name: 'Saimaze', price: '€10.95', image: productImage1, origin: 'Spain', strength: 'Medium' },
+    { id: '6', name: 'Dallmayr', price: '€9.99', image: productImage2, origin: 'Germany', strength: 'Light' }
   ];
 
   const [filter, setFilter] = useState({ origin: '', strength: '' });
