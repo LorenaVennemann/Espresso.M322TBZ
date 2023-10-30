@@ -56,6 +56,8 @@ const Home: React.FC = () => {
           </Link>
         </section>
 
+        <section></section>
+
         <section className={classes.four_textboxes}>
           <div className={classes.textbox}>
             <img src="https://kaffeezentrale.com/media/4c/17/b6/1686771659/GV-1-1.jpg" alt="" />
@@ -78,6 +80,8 @@ const Home: React.FC = () => {
             <p>95% Arabica. Slowly roasted on an open olive wood fire.Trinacria Since ancient</p>
           </div>
         </section>
+
+        <section></section>
 
         <footer className={classes.footer}>
           <h1>Expresso Oase © 2023 ExpressoOase.com</h1>

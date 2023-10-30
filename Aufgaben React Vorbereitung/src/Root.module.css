@@ -200,6 +200,8 @@ footer.footer h1 {
 .textbox_center h1,
 .textbox_end h1 {
     font-size: 2rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #90a774;
 }
 
 .textbox_start p,
@@ -288,6 +290,9 @@ footer.footer h1 {
 
 .four_textboxes .textbox {
     width: calc(25% - 50px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .four_textboxes .textbox img {
@@ -295,16 +300,10 @@ footer.footer h1 {
     aspect-ratio: 1 / 1;
     object-fit: cover;
 }
-/* Füge die Größe für das Icon in der Navigationsleiste hinzu */
-header .navbar ul li a img {
-    width: 20px; /* Ändere die Breite nach deinen Wünschen */
-    height: auto; /* Lasse die Höhe automatisch anpassen */
-}
 
-/* Füge die Größe für das Icon im Warenkorb hinzu */
-li a img {
-    width: 20px; /* Ändere die Breite nach deinen Wünschen */
-    height: auto; /* Lasse die Höhe automatisch anpassen */
+.four_textboxes .textbox h1 {
+  font-size: 1.4rem;
+  border-bottom: 1px solid #90a774;
 }
 
 /* SHOP MODULE CLASSES */

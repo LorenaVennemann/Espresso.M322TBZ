@@ -44,9 +44,10 @@ const Home: React.FC = () => {
 
       <main>
 
-          <section>
-            <h1>hiowjqdwoid</h1>
-          </section>
+      <section className={classes.textbox_center}>
+          <h1>Kontaktmöglichkeiten</h1>
+          <p>Willkommen in der Expresso Oase, einem Ort, an dem Sie exquisiten Kaffeegenuss und eine Fülle von Aromen entdecken können. Unsere Leidenschaft für Kaffee spiegelt sich in jeder Tasse wider, die unsere erfahrenen Baristas mit Hingabe zubereiten. Von klassischen Kreationen bis hin zu innovativen Spezialitäten bieten wir Ihnen eine vielfältige Auswahl, die Ihre Geschmacksknospen verwöhnen wird.</p>
+        </section>
 
           <footer className={classes.footer}>
           <h1>Expresso Oase © 2023 ExpressoOase.com</h1>
