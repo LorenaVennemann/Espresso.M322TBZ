@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../warenkorb.module.css';
 import classes from '../Root.module.css';
+import warenkorbImage from '../warenkorb.png';
 
 interface Product {
   id: string;
@@ -54,10 +55,17 @@ const Cart: React.FC = () => {
           </ul>
         </nav>
 
-        <div className={classes.TOSHOP}>
-          <Link className={`${classes["TOSHOP-link"]}`} to="/shop">
-            Shop
-          </Link>
+        <div className={classes.Nav_End}>
+          <div className={classes.TOSHOP}>
+            <Link className={`${classes["TOSHOP-link"]}`} to="/shop">
+              Shop
+            </Link>
+          </div>
+          <div>
+            <Link className={classes.Button} to="/warenkorb">
+              <img src={warenkorbImage} alt="Warenkorb" />
+            </Link>
+          </div>
         </div>
       </header>
 

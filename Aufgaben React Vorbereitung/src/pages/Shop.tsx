@@ -33,7 +33,7 @@ const Shop = () => {
     origin: string;
     strength: string;
   };
-  
+
   const addToCart = (product: Product) => {
     let cart: Product[] = [];
     const cartData = localStorage.getItem('cart');
@@ -45,8 +45,8 @@ const Shop = () => {
 
     /* history.push('/warenkorb'); */
   };
-  
-  
+
+
 
 
   return (
@@ -74,6 +74,11 @@ const Shop = () => {
         </nav>
 
         <div className={classes.Nav_End}>
+          <div className={classes.TOSHOP}>
+            <Link className={`${classes["TOSHOP-link"]}`} to="/shop">
+              Shop
+            </Link>
+          </div>
           <div>
             <Link className={classes.Button} to="/warenkorb">
               <img src={warenkorbImage} alt="Warenkorb" />

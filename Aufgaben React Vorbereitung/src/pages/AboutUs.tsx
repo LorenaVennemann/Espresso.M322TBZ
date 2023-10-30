@@ -26,8 +26,6 @@ const AboutUs = () => {
             <li>
               <Link to="/contact">Contact</Link>
             </li>
-            <li>
-            </li>
           </ul>
         </nav>
 
