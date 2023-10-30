@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../Shop.module.css';
 import productImage from '../Coffee1.jpg';
 import productImage1 from '../Caffee2.jpg'
 import productImage2 from '../Coffee3.png'
 import classes from "../Root.module.css";
 import warenkorbImage from '../warenkorb.png';
-import { Link, useHistory } from 'react-router-dom';
 
-
-
-const Shop = () => {
-  const history = useHistory();
+const Shop = (props: { history: string[]; }) => {
   const products = [
     { id: '1', name: 'Lavazza-Coffee', price: '€12.85', image: productImage, origin: 'Italy', strength: 'Strong' },
     { id: '2', name: 'Torro-Espresso', price: '€10.95', image: productImage1, origin: 'Spain', strength: 'Medium' },
@@ -25,6 +22,7 @@ const Shop = () => {
     (filter.origin === '' || product.origin === filter.origin) &&
     (filter.strength === '' || product.strength === filter.strength)
   );
+  
   type Product = {
     id: string;
     name: string;
@@ -34,8 +32,8 @@ const Shop = () => {
     strength: string;
   };
   
-  const addToCart = (product: Product) => {
-    let cart: Product[] = [];
+  const addToCart = (product: { id: string; name: string; price: string; image: string; origin: string; strength: string; }) => {
+    let cart = [];
     const cartData = localStorage.getItem('cart');
     if (cartData) {
       cart = JSON.parse(cartData);
@@ -43,12 +41,9 @@ const Shop = () => {
     cart.push(product);
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    history.push('/warenkorb');
+    props.history.push('/warenkorb');
   };
   
-  
-
-
   return (
     <div className={classes.div}>
       <header>
@@ -71,10 +66,10 @@ const Shop = () => {
               <Link to="/contact">Contact</Link>
             </li>
             <li>
-  <Link to="/warenkorb">
-    <img src={warenkorbImage} alt="Warenkorb" />
-  </Link>
-</li>
+              <Link to="/warenkorb">
+                <img src={warenkorbImage} alt="Warenkorb" />
+              </Link>
+            </li>
           </ul>
         </nav>
       </header>
@@ -88,6 +83,7 @@ const Shop = () => {
               <option value="Spain">Spain</option>
               <option value="Germany">Germany</option>
             </select>
+
             <select onChange={(e) => setFilter({ ...filter, strength: e.target.value })}>
               <option value="">All strengths</option>
               <option value="Strong">Strong</option>
@@ -95,8 +91,11 @@ const Shop = () => {
               <option value="Light">Light</option>
             </select>
           </div>
+
         </section>
+
         <section>
+
           <div className={styles.container}>
             {filteredProducts.map((product) => (
               <div key={product.id} className={styles.product}>
@@ -105,11 +104,16 @@ const Shop = () => {
                 <p>{product.price}</p>
                 <button onClick={() => addToCart(product)}>Add to Cart</button>
               </div>
+
             ))}
           </div>
+
         </section>
+
       </main>
+
     </div>
+
   );
 };
 
