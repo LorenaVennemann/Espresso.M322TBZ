@@ -270,6 +270,17 @@ footer.footer h1 {
     aspect-ratio: 1 / 1;
     object-fit: cover;
 }
+/* Füge die Größe für das Icon in der Navigationsleiste hinzu */
+header .navbar ul li a img {
+    width: 20px; /* Ändere die Breite nach deinen Wünschen */
+    height: auto; /* Lasse die Höhe automatisch anpassen */
+}
+
+/* Füge die Größe für das Icon im Warenkorb hinzu */
+li a img {
+    width: 20px; /* Ändere die Breite nach deinen Wünschen */
+    height: auto; /* Lasse die Höhe automatisch anpassen */
+}
 
 /* SHOP MODULE CLASSES */
 /* .shop-layout-nav {

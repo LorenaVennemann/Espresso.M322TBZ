@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import classes from "../Root.module.css";
 import "../Root.module.css";
-
+import warenkorbImage from '../warenkorb.png';
 const Home: React.FC = () => {
   return (
     <div className={classes.div}>
@@ -25,6 +25,11 @@ const Home: React.FC = () => {
             <li>
               <Link to="/contact">Contact</Link>
             </li>
+            <li>
+  <Link to="/warenkorb">
+    <img src={warenkorbImage} alt="Warenkorb" />
+  </Link>
+</li>
           </ul>
         </nav>
 

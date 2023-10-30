@@ -5,6 +5,7 @@ import AboutUs from "./pages/AboutUs";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Shop from "./pages/Shop";
+import Warenkorb from "./pages/Warenkorb";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/Blog" element={<Blog />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Shop" element={<Shop />} />
+          <Route path="/Warenkorb" element={<Warenkorb />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import classes from "../Root.module.css";
 import "../Root.module.css";
 import "../Blog.module.css"
-
+import warenkorbImage from '../warenkorb.png';
 const Blog: React.FC = () => {
   return (
     <div className={classes.app}>
@@ -26,6 +26,11 @@ const Blog: React.FC = () => {
             <li>
               <Link to="/contact">Kontakt</Link>
             </li>
+            <li>
+  <Link to="/warenkorb">
+    <img src={warenkorbImage} alt="Warenkorb" />
+  </Link>
+</li>
           </ul>
         </nav>
 

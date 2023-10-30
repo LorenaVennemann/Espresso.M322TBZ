@@ -5,6 +5,8 @@ import productImage1 from '../Caffee2.jpg'
 import productImage2 from '../Coffee3.png'
 import classes from "../Root.module.css";
 import { Link } from 'react-router-dom';
+import warenkorbImage from '../warenkorb.png';
+
 const Shop = () => {
 
   const products = [
@@ -43,6 +45,11 @@ const Shop = () => {
             <li>
               <Link to="/contact">Contact</Link>
             </li>
+            <li>
+  <Link to="/warenkorb">
+    <img src={warenkorbImage} alt="Warenkorb" />
+  </Link>
+</li>
           </ul>
         </nav>
       </header>

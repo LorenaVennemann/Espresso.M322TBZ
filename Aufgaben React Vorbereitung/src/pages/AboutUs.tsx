@@ -3,7 +3,7 @@ import logo from '../logo.svg';
 import classes from "../Root.module.css";
 import "../Root.module.css";
 import { Link } from 'react-router-dom';
-
+import warenkorbImage from '../warenkorb.png';
 const AboutUs = () => {
   return (
     <div className={classes.app}>
@@ -26,6 +26,11 @@ const AboutUs = () => {
             <li>
               <Link to="/contact">Contact</Link>
             </li>
+            <li>
+  <Link to="/warenkorb">
+    <img src={warenkorbImage} alt="Warenkorb" />
+  </Link>
+</li>
           </ul>
         </nav>
 
