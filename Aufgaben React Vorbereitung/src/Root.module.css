@@ -419,3 +419,51 @@ footer.footer h1 {
 .Shop_container .container .product button:hover {
   background-color: #90a774;
 }
+
+/* CHECKOUT CLASSES */
+.Checkout_container ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.Checkout_container ul li > div {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  background-color: #E1D9D0;
+  width: fit-content;
+  border-radius: 10px;
+  position: relative;
+  gap: 15px;
+}
+
+.Checkout_container ul li div img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.Checkout_container ul li div > div {
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  padding: 0;
+}
+
+.Checkout_container ul li div > div button {
+  width: fit-content;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.Checkout_container ul li div > div button:hover {
+  background-color: rgb(200, 54, 54);
+  color: white;
+}
