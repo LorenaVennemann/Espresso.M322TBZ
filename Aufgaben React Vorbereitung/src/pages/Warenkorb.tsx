@@ -17,7 +17,7 @@ interface Product {
       const cartData = localStorage.getItem('cart');
       if (cartData) {
         const parsedCartItems = JSON.parse(cartData) as Product[];
-        // Stellen Sie sicher, dass die "price"-Werte als Zeichenketten (Strings) vorliegen
+    
         const cartItemsWithValidPrices = parsedCartItems.map(item => ({
           ...item,
           price: item.price.toString(),
@@ -34,7 +34,6 @@ interface Product {
   };
 
   const getTotalPrice = () => {
-    // Berechnen Sie den Gesamtpreis aus den Preisen der Produkte im Warenkorb
     const totalPrice = cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
     return totalPrice;
   };

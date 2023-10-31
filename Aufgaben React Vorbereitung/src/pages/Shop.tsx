@@ -42,8 +42,6 @@ const Shop = () => {
     }
     cart.push(product);
     localStorage.setItem('cart', JSON.stringify(cart));
-
-    /* history.push('/warenkorb'); */
   };
 
 
