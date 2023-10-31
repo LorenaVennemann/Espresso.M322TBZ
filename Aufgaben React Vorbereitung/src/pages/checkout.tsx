@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../warenkorb.module.css';
 import classes from '../Root.module.css';
-import "../checkout.module.css";
 import warenkorbImage from '../warenkorb.png';
 
 // Definieren des Produktinterfaces
@@ -34,22 +33,51 @@ const Checkout: React.FC = () => {
 
   // Funktion zur Abwicklung der Zahlung (Platzhalter)
   const handlePayment = () => {
-    // Hier würde Ihre Zahlungsverarbeitungslogik eingefügt werden, z.B., Integration eines Zahlungs-Gateways
+    // Fügen Sie hier Ihre Logik für die Zahlungsabwicklung ein
     alert('Zahlung erfolgreich');
   };
 
   return (
     <div className={classes.div}>
       <header>
-        {/* ... Ihre Header-Komponente ... */}
-      </header>
-      <main>
-        <h2>Checkout</h2>
+        <div className={`${classes["search-bar"]}`}>
+          <input type="text" placeholder="Search..." />
+        </div>
 
+        <nav className={classes.navbar}>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About Us</Link>
+            </li>
+            <li>
+              <Link to="/blog">Blog</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+          </ul>
+        </nav>
+            <div className={classes.Nav_End}>
+          <div className={classes.TOSHOP}>
+            <Link className={`${classes["TOSHOP-link"]}`} to="/shop">
+              Shop
+            </Link>
+          </div>
+          <div>
+            <Link className={classes.Button} to="/warenkorb">
+              <img src={warenkorbImage} alt="Warenkorb" />
+            </Link>
+          </div>
+        </div>
+      </header>
+        <h2>Checkout</h2>
+<main>
         <div className={styles.stepContainer}>
           <div className={styles.step}>
             <h3>Schritt 1: Warenkorb überprüfen</h3>
-            {/* Hier könnten Sie die Produkte im Warenkorb auflisten */}
             <ul>
               {cartItems.map((item) => (
                 <li key={item.id}>
@@ -61,7 +89,7 @@ const Checkout: React.FC = () => {
 
           <div className={styles.step}>
             <h3>Schritt 2: Lieferadresse eingeben</h3>
-            <input type="text" placeholder="Adresse eingeben" value={address} onChange={(e) => setAddress(e.target.value)} required />
+            <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} required />
           </div>
 
           <div className={styles.step}>
@@ -80,7 +108,7 @@ const Checkout: React.FC = () => {
             <button onClick={handlePayment}>Bezahlen</button>
           </div>
         </div>
-      </main>
+        </main>
     </div>
   );
 };

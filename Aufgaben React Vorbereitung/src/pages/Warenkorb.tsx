@@ -28,7 +28,9 @@ const Cart: React.FC = () => {
   };
 
   const getTotalPrice = () => {
-    return cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
+    // Berechnen Sie den Gesamtpreis aus den Preisen der Produkte im Warenkorb
+    const totalPrice = cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
+    return totalPrice;
   };
 
   return (
@@ -68,7 +70,6 @@ const Cart: React.FC = () => {
           </div>
         </div>
       </header>
-
       <main>
         <h2>Shopping Cart</h2>
 
@@ -91,8 +92,10 @@ const Cart: React.FC = () => {
 
         <p>Total: €{getTotalPrice().toFixed(2)}</p>
 
+        <Link to="/checkout">
+          <button>Checkout</button>
+        </Link>
       </main>
-
     </div>
   );
 };
