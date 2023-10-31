@@ -314,3 +314,47 @@ footer.footer h1 {
 /* .shop-layout-boxes {
 
 } */
+
+
+/* BLOG CLASSES */
+
+.blog_double {
+  display: flex;
+  gap: 50px;
+  flex-direction: row;
+}
+
+.blog_double .left {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.blog_double .right {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.blog_card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.text_box {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog_double .left img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.blog_double img:hover {
+  transform: translateY(-10px);
+}
