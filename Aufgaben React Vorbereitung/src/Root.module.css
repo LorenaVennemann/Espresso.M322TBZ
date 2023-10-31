@@ -467,3 +467,25 @@ footer.footer h1 {
   background-color: rgb(200, 54, 54);
   color: white;
 }
+
+.Checkout_Button div {
+  background-color: #E1D9D0;
+  padding: 15px;
+  border-radius: 10px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Checkout_Button button {
+   cursor: pointer;
+   border: none;
+   padding: 10px 30px;
+   border-radius: 10px;
+}
+
+.Checkout_Button button:hover {
+  background-color: #5C921C;
+  color: white;
+}

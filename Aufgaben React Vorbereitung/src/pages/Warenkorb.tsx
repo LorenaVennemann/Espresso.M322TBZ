@@ -10,21 +10,21 @@ interface Product {
   price: string;
   image: string;
 }
-  const Cart: React.FC = () => {
-    const [cartItems, setCartItems] = useState<Product[]>([]);
-  
-    useEffect(() => {
-      const cartData = localStorage.getItem('cart');
-      if (cartData) {
-        const parsedCartItems = JSON.parse(cartData) as Product[];
-    
-        const cartItemsWithValidPrices = parsedCartItems.map(item => ({
-          ...item,
-          price: item.price.toString(),
-        }));
-        setCartItems(cartItemsWithValidPrices);
-      }
-    }, []);
+const Cart: React.FC = () => {
+  const [cartItems, setCartItems] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const cartData = localStorage.getItem('cart');
+    if (cartData) {
+      const parsedCartItems = JSON.parse(cartData) as Product[];
+
+      const cartItemsWithValidPrices = parsedCartItems.map(item => ({
+        ...item,
+        price: item.price.toString(),
+      }));
+      setCartItems(cartItemsWithValidPrices);
+    }
+  }, []);
 
 
   const removeFromCart = (id: string) => {
@@ -103,13 +103,17 @@ interface Product {
           )}
         </section>
 
-        <section>
-          <p>Total: €{getTotalPrice().toFixed(2)}</p>
+        <section className={classes.Checkout_Button}>
+          <div>
+            <p>Total: €{getTotalPrice().toFixed(2)}</p>
+
+            <Link to="/checkout">
+              <button>Checkout</button>
+            </Link>
+          </div>
         </section>
 
-        <Link to="/checkout">
-          <button>Checkout</button>
-        </Link>
+
       </main>
     </div>
   );
