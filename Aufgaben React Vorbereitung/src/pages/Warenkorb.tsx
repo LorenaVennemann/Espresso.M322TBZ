@@ -10,16 +10,22 @@ interface Product {
   price: string;
   image: string;
 }
+  const Cart: React.FC = () => {
+    const [cartItems, setCartItems] = useState<Product[]>([]);
+  
+    useEffect(() => {
+      const cartData = localStorage.getItem('cart');
+      if (cartData) {
+        const parsedCartItems = JSON.parse(cartData) as Product[];
+        // Stellen Sie sicher, dass die "price"-Werte als Zeichenketten (Strings) vorliegen
+        const cartItemsWithValidPrices = parsedCartItems.map(item => ({
+          ...item,
+          price: item.price.toString(),
+        }));
+        setCartItems(cartItemsWithValidPrices);
+      }
+    }, []);
 
-const Cart: React.FC = () => {
-  const [cartItems, setCartItems] = useState<Product[]>([]);
-
-  useEffect(() => {
-    const cartData = localStorage.getItem('cart');
-    if (cartData) {
-      setCartItems(JSON.parse(cartData));
-    }
-  }, []);
 
   const removeFromCart = (id: string) => {
     const updatedCart = cartItems.filter((item) => item.id !== id);
@@ -28,7 +34,9 @@ const Cart: React.FC = () => {
   };
 
   const getTotalPrice = () => {
-    return cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
+    // Berechnen Sie den Gesamtpreis aus den Preisen der Produkte im Warenkorb
+    const totalPrice = cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
+    return totalPrice;
   };
 
   return (
@@ -68,7 +76,6 @@ const Cart: React.FC = () => {
           </div>
         </div>
       </header>
-
       <main>
 
         <section className={classes.textbox_start}>
@@ -101,8 +108,10 @@ const Cart: React.FC = () => {
           <p>Total: €{getTotalPrice().toFixed(2)}</p>
         </section>
 
+        <Link to="/checkout">
+          <button>Checkout</button>
+        </Link>
       </main>
-
     </div>
   );
 };
