@@ -10,16 +10,22 @@ interface Product {
   price: string;
   image: string;
 }
+  const Cart: React.FC = () => {
+    const [cartItems, setCartItems] = useState<Product[]>([]);
+  
+    useEffect(() => {
+      const cartData = localStorage.getItem('cart');
+      if (cartData) {
+        const parsedCartItems = JSON.parse(cartData) as Product[];
+        // Stellen Sie sicher, dass die "price"-Werte als Zeichenketten (Strings) vorliegen
+        const cartItemsWithValidPrices = parsedCartItems.map(item => ({
+          ...item,
+          price: item.price.toString(),
+        }));
+        setCartItems(cartItemsWithValidPrices);
+      }
+    }, []);
 
-const Cart: React.FC = () => {
-  const [cartItems, setCartItems] = useState<Product[]>([]);
-
-  useEffect(() => {
-    const cartData = localStorage.getItem('cart');
-    if (cartData) {
-      setCartItems(JSON.parse(cartData));
-    }
-  }, []);
 
   const removeFromCart = (id: string) => {
     const updatedCart = cartItems.filter((item) => item.id !== id);
@@ -82,7 +88,7 @@ const Cart: React.FC = () => {
                 <img src={item.image} alt={item.name} />
                 <div>
                   <h3>{item.name}</h3>
-                  <p>Price: €{item.price}</p>
+                  <p>Price: {item.price}</p>
                   <button onClick={() => removeFromCart(item.id)}>Remove</button>
                 </div>
               </li>
