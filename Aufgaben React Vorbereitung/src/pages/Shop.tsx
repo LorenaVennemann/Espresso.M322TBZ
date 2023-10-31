@@ -88,29 +88,33 @@ const Shop = () => {
       </header>
 
       <main>
-        <section>
-          <div className={styles.filter}>
-            <select onChange={(e) => setFilter({ ...filter, origin: e.target.value })}>
-              <option value="">All origins</option>
-              <option value="Italy">Italy</option>
-              <option value="Spain">Spain</option>
-              <option value="Germany">Germany</option>
-            </select>
-            <select onChange={(e) => setFilter({ ...filter, strength: e.target.value })}>
-              <option value="">All strengths</option>
-              <option value="Strong">Strong</option>
-              <option value="Medium">Medium</option>
-              <option value="Light">Light</option>
-            </select>
+        <section className={classes.Shop_filter}>
+          <div className={classes.filter}>
+            <div className={styles.filter}>
+              <select onChange={(e) => setFilter({ ...filter, origin: e.target.value })}>
+                <option value="">All origins</option>
+                <option value="Italy">Italy</option>
+                <option value="Spain">Spain</option>
+                <option value="Germany">Germany</option>
+              </select>
+              <select onChange={(e) => setFilter({ ...filter, strength: e.target.value })}>
+                <option value="">All strengths</option>
+                <option value="Strong">Strong</option>
+                <option value="Medium">Medium</option>
+                <option value="Light">Light</option>
+              </select>
+            </div>
           </div>
         </section>
-        <section>
-          <div className={styles.container}>
+        <section className={classes.Shop_container}>
+          <div className={classes.container}>
             {filteredProducts.map((product) => (
-              <div key={product.id} className={styles.product}>
+              <div key={product.id} className={classes.product}>
                 <img src={product.image} alt={product.name} />
-                <h2>{product.name}</h2>
-                <p>{product.price}</p>
+                <div>
+                  <h2>{product.name}</h2>
+                  <p>{product.price}</p>
+                </div>
                 <button onClick={() => addToCart(product)}>Add to Cart</button>
               </div>
             ))}
