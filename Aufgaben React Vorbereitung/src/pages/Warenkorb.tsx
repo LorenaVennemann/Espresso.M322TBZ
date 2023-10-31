@@ -78,7 +78,7 @@ const Cart: React.FC = () => {
       <main>
 
         <section className={classes.textbox_start}>
-          <h2>Shopping Cart</h2>
+          <h1>Shopping Cart</h1>
         </section>
 
         <section className={classes.Checkout_container}>

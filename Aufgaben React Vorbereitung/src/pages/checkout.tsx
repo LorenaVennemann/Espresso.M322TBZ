@@ -84,57 +84,64 @@ const Checkout: React.FC = () => {
         </div>
       </header>
       <main>
-        <h2>Checkout</h2>
 
-        <div className="checkout-steps">
-          <div className="checkout-step">
-            <h3>Step 1: Review Your Cart</h3>
-            <ul>
-              {cartItems.map((item) => (
-                <li key={item.id}>
-                  {item.name} - €{item.price}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <section className={classes.textbox_start}>
+          <h1>Checkout</h1>
+        </section>
 
-          <div className="checkout-step">
-            <h3>Step 2: Enter Delivery Address</h3>
-            <input type="text" placeholder="Enter your address" value={address} onChange={(e) => setAddress(e.target.value)} required />
-          </div>
+        <section className={classes.checkout_final}>
 
-          <div className="checkout-step">
-            <h3>Step 3: Select Payment Method</h3>
-            <select value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)} required>
-              <option value="creditCard">Credit Card</option>
-              <option value="debitCard">Debit Card</option>
-              <option value="paypal">PayPal</option>
-            </select>
-          </div>
-
-          {paymentMethod === 'creditCard' && (
+          <div className="checkout-steps">
             <div className="checkout-step">
-              <h3>Step 4: Enter Credit Card Information</h3>
-              <input
-                type="text"
-                placeholder="Enter your credit card number"
-                value={creditCardNumber}
-                onChange={(e) => setCreditCardNumber(e.target.value)}
-                required
-              />
+              <h3>Step 1: Review Your Cart</h3>
+              <ul>
+                {cartItems.map((item) => (
+                  <li key={item.id}>
+                    {item.name} - €{item.price}
+                  </li>
+                ))}
+              </ul>
             </div>
-          )}
 
-          <div className="checkout-step">
-            <h3>Step 5: Review and Pay</h3>
-            <p>Total: €{getTotalPrice().toFixed(2)}</p>
-            {paymentSuccess ? (
-              <p>Payment successful. Thank you for your order!</p>
-            ) : (
-              <button onClick={handlePayment}>Pay</button>
+            <div className="checkout-step">
+              <h3>Step 2: Enter Delivery Address</h3>
+              <input type="text" placeholder="Enter your address" value={address} onChange={(e) => setAddress(e.target.value)} required />
+            </div>
+
+            <div className="checkout-step">
+              <h3>Step 3: Select Payment Method</h3>
+              <select value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)} required>
+                <option value="creditCard">Credit Card</option>
+                <option value="debitCard">Debit Card</option>
+                <option value="paypal">PayPal</option>
+              </select>
+            </div>
+
+            {paymentMethod === 'creditCard' && (
+              <div className="checkout-step">
+                <h3>Step 4: Enter Credit Card Information</h3>
+                <input
+                  type="text"
+                  placeholder="Enter your credit card number"
+                  value={creditCardNumber}
+                  onChange={(e) => setCreditCardNumber(e.target.value)}
+                  required
+                />
+              </div>
             )}
-            
-            </div></div>
+
+            <div className="checkout-step">
+              <h3>Step 5: Review and Pay</h3>
+              <p>Total: €{getTotalPrice().toFixed(2)}</p>
+              {paymentSuccess ? (
+                <p>Payment successful. Thank you for your order!</p>
+              ) : (
+                <button onClick={handlePayment}>Pay</button>
+              )}
+
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );

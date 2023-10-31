@@ -489,3 +489,17 @@ footer.footer h1 {
   background-color: #5C921C;
   color: white;
 }
+
+
+/* Checkout Final */
+.checkout_final > div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.checkout_final > div > * {
+  background-color: #E1D9D0;
+  padding: 15px;
+  border-radius: 10px;
+}
