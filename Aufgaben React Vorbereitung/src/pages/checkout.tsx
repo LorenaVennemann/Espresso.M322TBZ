@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../warenkorb.module.css';
-import classes from '../Root.module.css';
+import classes from "../Root.module.css";
+import "../Root.module.css";
 import warenkorbImage from '../warenkorb.png';
-
-// Definieren des Produktinterfaces
 interface Product {
   id: string;
   name: string;
@@ -13,12 +12,12 @@ interface Product {
 }
 
 const Checkout: React.FC = () => {
-  // Zustände für den Warenkorb, Adresse und Zahlungsmethode
   const [cartItems, setCartItems] = useState<Product[]>([]);
   const [address, setAddress] = useState('');
-  const [paymentMethod, setPaymentMethod] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState('creditCard');
+  const [creditCardNumber, setCreditCardNumber] = useState('');
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
 
-  // Verwenden von useEffect, um den Warenkorb aus dem lokalen Speicher abzurufen
   useEffect(() => {
     const cartData = localStorage.getItem('cart');
     if (cartData) {
@@ -26,15 +25,26 @@ const Checkout: React.FC = () => {
     }
   }, []);
 
-  // Funktion zur Berechnung des Gesamtpreises im Warenkorb
   const getTotalPrice = () => {
     return cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
   };
 
-  // Funktion zur Abwicklung der Zahlung (Platzhalter)
   const handlePayment = () => {
-    // Fügen Sie hier Ihre Logik für die Zahlungsabwicklung ein
-    alert('Zahlung erfolgreich');
+    // Hier würde Ihre tatsächliche Zahlungsverarbeitungslogik eingefügt werden, indem Sie ein Zahlungs-Gateway integrieren.
+
+    // Simulieren einer erfolgreichen Zahlung (ersetzen Sie dies durch echte Zahlungslogik)
+    setTimeout(() => {
+      // Hier könnten Sie eine API-Anfrage an Ihr Zahlungs-Gateway senden
+      // und auf die Antwort warten, um den Zahlungsstatus zu überprüfen.
+
+      // Wenn die Zahlung erfolgreich ist, führen Sie die folgenden Schritte aus:
+
+      // 1. Speichern der Bestellinformationen und Zahlungsdetails in Ihrer Datenbank
+      // 2. Versenden einer Bestätigungs-E-Mail an den Kunden
+      // 3. Weiterleitung zur Bestellbestätigungsseite oder Dankesseite
+
+      setPaymentSuccess(true);
+    }, 2000); // Hier simulieren wir eine Verzögerung von 2 Sekunden, um die Zahlungsverarbeitung zu zeigen.
   };
 
   return (
@@ -60,7 +70,7 @@ const Checkout: React.FC = () => {
             </li>
           </ul>
         </nav>
-            <div className={classes.Nav_End}>
+        <div className={classes.Nav_End}>
           <div className={classes.TOSHOP}>
             <Link className={`${classes["TOSHOP-link"]}`} to="/shop">
               Shop
@@ -73,44 +83,62 @@ const Checkout: React.FC = () => {
           </div>
         </div>
       </header>
+      <main>
         <h2>Checkout</h2>
-<main>
-        <div className={styles.stepContainer}>
-          <div className={styles.step}>
-            <h3>Schritt 1: Warenkorb überprüfen</h3>
+
+        <div className="checkout-steps">
+          <div className="checkout-step">
+            <h3>Step 1: Review Your Cart</h3>
             <ul>
               {cartItems.map((item) => (
                 <li key={item.id}>
-                  {item.name} - {item.price}
+                  {item.name} - €{item.price}
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className={styles.step}>
-            <h3>Schritt 2: Lieferadresse eingeben</h3>
-            <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} required />
+          <div className="checkout-step">
+            <h3>Step 2: Enter Delivery Address</h3>
+            <input type="text" placeholder="Enter your address" value={address} onChange={(e) => setAddress(e.target.value)} required />
           </div>
 
-          <div className={styles.step}>
-            <h3>Schritt 3: Zahlungsmethode auswählen</h3>
+          <div className="checkout-step">
+            <h3>Step 3: Select Payment Method</h3>
             <select value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)} required>
-              <option value="">Wählen Sie eine Zahlungsmethode</option>
-              <option value="creditCard">Kreditkarte</option>
-              <option value="debitCard">Debitkarte</option>
+              <option value="creditCard">Credit Card</option>
+              <option value="debitCard">Debit Card</option>
               <option value="paypal">PayPal</option>
             </select>
           </div>
 
-          <div className={styles.step}>
-            <h3>Schritt 4: Überprüfen und bezahlen</h3>
-            <p>Gesamt: €{getTotalPrice().toFixed(2)}</p>
-            <button onClick={handlePayment}>Bezahlen</button>
-          </div>
-        </div>
-        </main>
+          {paymentMethod === 'creditCard' && (
+            <div className="checkout-step">
+              <h3>Step 4: Enter Credit Card Information</h3>
+              <input
+                type="text"
+                placeholder="Enter your credit card number"
+                value={creditCardNumber}
+                onChange={(e) => setCreditCardNumber(e.target.value)}
+                required
+              />
+            </div>
+          )}
+
+          <div className="checkout-step">
+            <h3>Step 5: Review and Pay</h3>
+            <p>Total: €{getTotalPrice().toFixed(2)}</p>
+            {paymentSuccess ? (
+              <p>Payment successful. Thank you for your order!</p>
+            ) : (
+              <button onClick={handlePayment}>Pay</button>
+            )}
+            
+            </div></div>
+      </main>
     </div>
   );
 };
-
 export default Checkout;
+
+

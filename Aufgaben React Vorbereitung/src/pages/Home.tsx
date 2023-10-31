@@ -27,7 +27,6 @@ const Home: React.FC = () => {
             </li>
           </ul>
         </nav>
-
         <div className={classes.Nav_End}>
           <div className={classes.TOSHOP}>
             <Link className={`${classes["TOSHOP-link"]}`} to="/shop">
