@@ -503,3 +503,51 @@ footer.footer h1 {
   padding: 15px;
   border-radius: 10px;
 }
+
+.checkout_final button {
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  width: 100px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.checkout_final button:hover {
+  background-color: #5C921C;
+  color: white;
+}
+
+.checkout_final input,
+.checkout_final select {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.contat_form {
+  padding: 0px 20%;
+}
+
+.contat_form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 10%;
+}
+
+/* Contact From Classes */
+.contat_form .contact_input {
+  display: flex;
+  flex-direction: column;
+}
+
+.contat_form .contact_input label {
+  font-size: 1.3rem;
+}
+
+.contat_form .contact_input input {
+  padding: 10px;
+  font-size: 1rem;
+}

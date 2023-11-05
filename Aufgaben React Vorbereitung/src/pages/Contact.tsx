@@ -44,12 +44,39 @@ const Home: React.FC = () => {
 
       <main>
 
-      <section className={classes.textbox_center}>
+        <section className={classes.textbox_center}>
           <h1>Kontaktmöglichkeiten</h1>
           <p>Willkommen in der Expresso Oase, einem Ort, an dem Sie exquisiten Kaffeegenuss und eine Fülle von Aromen entdecken können. Unsere Leidenschaft für Kaffee spiegelt sich in jeder Tasse wider, die unsere erfahrenen Baristas mit Hingabe zubereiten. Von klassischen Kreationen bis hin zu innovativen Spezialitäten bieten wir Ihnen eine vielfältige Auswahl, die Ihre Geschmacksknospen verwöhnen wird.</p>
         </section>
 
-          <footer className={classes.footer}>
+        <section></section>
+
+        <section className={classes.contat_form}>
+          <form action="#">
+            <div className={classes.contact_input}>
+            <label htmlFor="reason">Betreff</label>
+            <input type="text" name="reason" id="reason" />
+            </div>
+            <div className={classes.contact_input}>
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" id="name" />
+            </div>
+            <div className={classes.contact_input}>
+            <label htmlFor="email">Email</label>
+            <input type="email" name="email" id="email" />
+            </div>
+
+            <div className={classes.contact_input}>
+            <label htmlFor="text">Nachricht</label>
+            <input type="text" name="text" id="text" />
+            </div>
+            <div className={classes.contact_input}>
+            <input type="submit" name="submit" id="submit" />
+            </div>
+          </form>
+        </section>
+
+        <footer className={classes.footer}>
           <h1>Expresso Oase © 2023 ExpressoOase.com</h1>
         </footer>
 
