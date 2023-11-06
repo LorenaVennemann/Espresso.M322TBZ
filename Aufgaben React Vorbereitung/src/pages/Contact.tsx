@@ -93,7 +93,6 @@ const Home: React.FC = () => {
                   <label htmlFor="text">Nachricht</label>
                   <input type="text" name="text" id="text" />
                 </div>
-                <br />
                 <div className={classes.contact_input}>
                   <input type="submit" name="submit" id="submit" />
                 </div>
