@@ -28,7 +28,7 @@ const Checkout: React.FC = () => {
 
   const getTotalPrice = () => {
     const totalPrice = cartItems.reduce((total, item) => {
-      if (item.price && typeof item.price === 'number') {
+      if (typeof item.price === 'number') {
         return total + item.price;
       }
       return total;

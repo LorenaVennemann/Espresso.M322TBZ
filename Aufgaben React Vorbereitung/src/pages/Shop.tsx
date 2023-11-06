@@ -8,14 +8,13 @@ import warenkorbImage from '../warenkorb.png';
 import { Link } from 'react-router-dom';
 
 const Shop = () => {
-  /* const history = useHistory(); */
   const products = [
-    { id: '1', name: 'Lavazza-Coffee', price: '€12.85', image: productImage, origin: 'Italy', strength: 'Strong' },
-    { id: '2', name: 'Torro-Espresso', price: '€10.95', image: productImage1, origin: 'Spain', strength: 'Medium' },
-    { id: '3', name: 'Mövenpick-Coffee', price: '€9.99', image: productImage2, origin: 'Germany', strength: 'Light' },
-    { id: '4', name: 'Segafredo', price: '€12.85', image: productImage, origin: 'Italy', strength: 'Strong' },
-    { id: '5', name: 'Saimaze', price: '€10.95', image: productImage1, origin: 'Spain', strength: 'Medium' },
-    { id: '6', name: 'Dallmayr', price: '€9.99', image: productImage2, origin: 'Germany', strength: 'Light' }
+    { id: '1', name: 'Lavazza-Coffee', price: 12.85, image: productImage, origin: 'Italy', strength: 'Strong' },
+    { id: '2', name: 'Torro-Espresso', price: 10.95, image: productImage1, origin: 'Spain', strength: 'Medium' },
+    { id: '3', name: 'Mövenpick-Coffee', price: 9.99, image: productImage2, origin: 'Germany', strength: 'Light' },
+    { id: '4', name: 'Segafredo', price: 12.85, image: productImage, origin: 'Italy', strength: 'Strong' },
+    { id: '5', name: 'Saimaze', price: 10.95, image: productImage1, origin: 'Spain', strength: 'Medium' },
+    { id: '6', name: 'Dallmayr', price: 9.99, image: productImage2, origin: 'Germany', strength: 'Light' }
   ];
 
   const [filter, setFilter] = useState({ origin: '', strength: '' });
@@ -26,7 +25,7 @@ const Shop = () => {
   type Product = {
     id: string;
     name: string;
-    price: string;
+    price: number;
     image: string;
     origin: string;
     strength: string;
@@ -40,12 +39,8 @@ const Shop = () => {
     }
     cart.push(product);
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert("1x " + product.name + "\n Wurde in ihren Warenkorb hinzugefügt. \n \n Wenn Sie fertig sind, gehen Sie zum Warenkorb Icon um Ihren einkaufen abzuschliessen");
+    alert("1x " + product.name + "\n Wurde in Ihren Warenkorb hinzugefügt. \n \n Wenn Sie fertig sind, gehen Sie zum Warenkorb-Icon um Ihren Einkauf abzuschließen");
   };
-
-
-
-
   return (
     <div className={classes.div}>
       <header>

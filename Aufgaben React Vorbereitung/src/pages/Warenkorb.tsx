@@ -7,7 +7,7 @@ import warenkorbImage from '../warenkorb.png';
 interface Product {
   id: string;
   name: string;
-  price: string;
+  price: number;
   image: string;
 }
 const Cart: React.FC = () => {
@@ -17,12 +17,7 @@ const Cart: React.FC = () => {
     const cartData = localStorage.getItem('cart');
     if (cartData) {
       const parsedCartItems = JSON.parse(cartData) as Product[];
-
-      const cartItemsWithValidPrices = parsedCartItems.map(item => ({
-        ...item,
-        price: item.price.toString(),
-      }));
-      setCartItems(cartItemsWithValidPrices);
+      setCartItems(parsedCartItems);
     }
   }, []);
 
@@ -32,15 +27,18 @@ const Cart: React.FC = () => {
     setCartItems(updatedCart);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
-
+ 
   const getTotalPrice = () => {
     const totalPrice = cartItems.reduce((total, item) => {
-      if (item.price && typeof item.price === 'number') {
+      if (typeof item.price === 'number') {
         return total + item.price;
       }
       return total;
     }, 0);
-    return totalPrice.toFixed(2);
+  
+    const formattedTotalPrice = totalPrice.toFixed(2);
+    console.log('Total Price:', formattedTotalPrice); // Debug-Ausgabe
+    return formattedTotalPrice;
   };
 
   return (
@@ -110,7 +108,7 @@ const Cart: React.FC = () => {
 
         <section className={classes.Checkout_Button}>
           <div>
-          <p>Total: {(getTotalPrice())}</p>
+          <p>Total: {getTotalPrice()}</p>
 
             <Link to="/checkout">
               <button>Checkout</button>
