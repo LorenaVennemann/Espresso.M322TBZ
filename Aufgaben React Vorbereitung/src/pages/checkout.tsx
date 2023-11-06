@@ -4,10 +4,11 @@ import styles from '../warenkorb.module.css';
 import classes from "../Root.module.css";
 import "../Root.module.css";
 import warenkorbImage from '../warenkorb.png';
+
 interface Product {
   id: string;
   name: string;
-  price: string;
+  price: number; 
   image: string;
 }
 
@@ -26,16 +27,21 @@ const Checkout: React.FC = () => {
   }, []);
 
   const getTotalPrice = () => {
-    return cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
+    const totalPrice = cartItems.reduce((total, item) => {
+      if (item.price && typeof item.price === 'number') {
+        return total + item.price;
+      }
+      return total;
+    }, 0);
+    return totalPrice.toFixed(2);
   };
 
   const handlePayment = () => {
-  
     setTimeout(() => {
-
       setPaymentSuccess(true);
-    }, 2000); 
+    }, 2000);
   };
+
 
   return (
     <div className={classes.div}>
@@ -87,8 +93,9 @@ const Checkout: React.FC = () => {
               <ul>
                 {cartItems.map((item) => (
                   <li key={item.id}>
-                    {item.name} - €{item.price}
-                  </li>
+                  {item.name} - €{item.price.toFixed(2).toString()}
+                </li>
+                
                 ))}
               </ul>
             </div>
@@ -122,7 +129,8 @@ const Checkout: React.FC = () => {
 
             <div className="checkout-step">
               <h3>Step 5: Review and Pay</h3>
-              <p>Total: {getTotalPrice().toFixed(2)}</p>
+              <p>Total: {getTotalPrice()}</p>
+
               {paymentSuccess ? (
                 <p>Payment successful. Thank you for your order!</p>
               ) : (

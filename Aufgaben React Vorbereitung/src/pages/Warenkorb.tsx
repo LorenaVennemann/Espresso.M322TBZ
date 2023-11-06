@@ -34,8 +34,13 @@ const Cart: React.FC = () => {
   };
 
   const getTotalPrice = () => {
-    const totalPrice = cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
-    return totalPrice;
+    const totalPrice = cartItems.reduce((total, item) => {
+      if (item.price && typeof item.price === 'number') {
+        return total + item.price;
+      }
+      return total;
+    }, 0);
+    return totalPrice.toFixed(2);
   };
 
   return (
@@ -92,7 +97,7 @@ const Cart: React.FC = () => {
                     <img src={item.image} alt={item.name} />
                     <div>
                       <h3>{item.name}</h3>
-                      <p>Price: €{item.price}</p>
+                      <p>Price: {item.price}</p>
                       <br />
                       <button onClick={() => removeFromCart(item.id)}>Remove</button>
                     </div>
@@ -105,7 +110,7 @@ const Cart: React.FC = () => {
 
         <section className={classes.Checkout_Button}>
           <div>
-            <p>Total: {getTotalPrice().toFixed(2)}</p>
+          <p>Total: {(getTotalPrice())}</p>
 
             <Link to="/checkout">
               <button>Checkout</button>
