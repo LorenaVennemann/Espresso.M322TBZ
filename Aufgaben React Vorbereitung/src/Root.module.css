@@ -54,16 +54,20 @@ section {
     height: 35px;
     display: flex;
     justify-content: center;
+    color: white;
   }
 
   .TOSHOP:hover {
     background-color: #5C921C;
+    color: white;
+    transform: scale(1.1);
   }
   
   .TOSHOP a {
     width: 100%;
     text-align: center;
     font-weight: 500;
+    color: white;
   }
   
   header {
