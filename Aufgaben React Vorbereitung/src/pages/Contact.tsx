@@ -17,13 +17,13 @@ const Home: React.FC = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About Us</Link>
+              <Link to="/about">Über uns</Link>
             </li>
             <li>
               <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact">Kontakt</Link>
             </li>
           </ul>
         </nav>
@@ -93,7 +93,6 @@ const Home: React.FC = () => {
                   <label htmlFor="text">Nachricht</label>
                   <input type="text" name="text" id="text" />
                 </div>
-                <br />
                 <div className={classes.contact_input}>
                   <input type="submit" name="submit" id="submit" />
                 </div>

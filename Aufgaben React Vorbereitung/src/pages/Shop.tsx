@@ -41,6 +41,11 @@ const Shop = () => {
     localStorage.setItem('cart', JSON.stringify(cart));
     alert("1x " + product.name + "\n Wurde in Ihren Warenkorb hinzugefügt. \n \n Wenn Sie fertig sind, gehen Sie zum Warenkorb-Icon um Ihren Einkauf abzuschließen");
   };
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 34bc235a9ff4f1e31e381a9bd120a41fad3226d1
   return (
     <div className={classes.div}>
       <header>
@@ -50,17 +55,17 @@ const Shop = () => {
 
         <nav className={classes.navbar}>
           <ul>
-            <li>
+          <li>
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About Us</Link>
+              <Link to="/about">Über uns</Link>
             </li>
             <li>
               <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact">Kontakt</Link>
             </li>
           </ul>
         </nav>

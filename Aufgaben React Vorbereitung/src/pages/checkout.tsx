@@ -28,7 +28,11 @@ const Checkout: React.FC = () => {
 
   const getTotalPrice = () => {
     const totalPrice = cartItems.reduce((total, item) => {
+<<<<<<< HEAD
       if (typeof item.price === 'number') {
+=======
+      if (item.price && typeof item.price === 'number') {
+>>>>>>> 34bc235a9ff4f1e31e381a9bd120a41fad3226d1
         return total + item.price;
       }
       return total;
@@ -37,6 +41,10 @@ const Checkout: React.FC = () => {
   };
 
   const handlePayment = () => {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 34bc235a9ff4f1e31e381a9bd120a41fad3226d1
     setTimeout(() => {
       setPaymentSuccess(true);
     }, 2000);
@@ -56,13 +64,13 @@ const Checkout: React.FC = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About Us</Link>
+              <Link to="/about">Über uns</Link>
             </li>
             <li>
               <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact">Kontakt</Link>
             </li>
           </ul>
         </nav>
@@ -93,9 +101,14 @@ const Checkout: React.FC = () => {
               <ul>
                 {cartItems.map((item) => (
                   <li key={item.id}>
+<<<<<<< HEAD
                   {item.name} - €{item.price.toFixed(2).toString()}
                 </li>
                 
+=======
+                    {item.name} - {item.price}
+                  </li>
+>>>>>>> 34bc235a9ff4f1e31e381a9bd120a41fad3226d1
                 ))}
               </ul>
             </div>
@@ -130,7 +143,10 @@ const Checkout: React.FC = () => {
             <div className="checkout-step">
               <h3>Step 5: Review and Pay</h3>
               <p>Total: {getTotalPrice()}</p>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 34bc235a9ff4f1e31e381a9bd120a41fad3226d1
               {paymentSuccess ? (
                 <p>Payment successful. Thank you for your order!</p>
               ) : (

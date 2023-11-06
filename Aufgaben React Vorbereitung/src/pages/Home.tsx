@@ -13,17 +13,17 @@ const Home: React.FC = () => {
 
         <nav className={classes.navbar}>
           <ul>
-            <li>
+          <li>
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About Us</Link>
+              <Link to="/about">Über uns</Link>
             </li>
             <li>
               <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact">Kontakt</Link>
             </li>
           </ul>
         </nav>
