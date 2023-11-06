@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../warenkorb.module.css';
-import classes from '../Root.module.css';
+import classes from "../Root.module.css";
+import "../Root.module.css";
 import warenkorbImage from '../warenkorb.png';
 
 interface Product {
@@ -10,43 +11,35 @@ interface Product {
   price: number;
   image: string;
 }
-const Cart: React.FC = () => {
+
+const Checkout: React.FC = () => {
   const [cartItems, setCartItems] = useState<Product[]>([]);
+  const [address, setAddress] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState('creditCard');
+  const [creditCardNumber, setCreditCardNumber] = useState('');
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
 
   useEffect(() => {
     const cartData = localStorage.getItem('cart');
     if (cartData) {
-      const parsedCartItems = JSON.parse(cartData) as Product[];
-      setCartItems(parsedCartItems);
+      setCartItems(JSON.parse(cartData));
     }
   }, []);
 
-
-  const removeFromCart = (id: string) => {
-    const updatedCart = cartItems.filter((item) => item.id !== id);
-    setCartItems(updatedCart);
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
-  };
- 
   const getTotalPrice = () => {
     const totalPrice = cartItems.reduce((total, item) => {
-<<<<<<< HEAD
       if (typeof item.price === 'number') {
-=======
-      if (item.price && typeof item.price === 'number') {
->>>>>>> 34bc235a9ff4f1e31e381a9bd120a41fad3226d1
         return total + item.price;
       }
       return total;
     }, 0);
-<<<<<<< HEAD
-  
-    const formattedTotalPrice = totalPrice.toFixed(2);
-    console.log('Total Price:', formattedTotalPrice); // Debug-Ausgabe
-    return formattedTotalPrice;
-=======
     return totalPrice.toFixed(2);
->>>>>>> 34bc235a9ff4f1e31e381a9bd120a41fad3226d1
+  };
+
+  const handlePayment = () => {
+    setTimeout(() => {
+      setPaymentSuccess(true);
+    }, 2000);
   };
 
   return (
@@ -58,7 +51,7 @@ const Cart: React.FC = () => {
 
         <nav className={classes.navbar}>
           <ul>
-          <li>
+            <li>
               <Link to="/">Home</Link>
             </li>
             <li>
@@ -72,7 +65,6 @@ const Cart: React.FC = () => {
             </li>
           </ul>
         </nav>
-
         <div className={classes.Nav_End}>
           <div className={classes.TOSHOP}>
             <Link className={`${classes["TOSHOP-link"]}`} to="/shop">
@@ -87,51 +79,73 @@ const Cart: React.FC = () => {
         </div>
       </header>
       <main>
-
         <section className={classes.textbox_start}>
-          <h1>Shopping Cart</h1>
+          <h1>Checkout</h1>
         </section>
 
-        <section className={classes.Checkout_container}>
-          {cartItems.length === 0 ? (
-            <p>Your shopping cart is empty.</p>
-          ) : (
-            <ul>
-              {cartItems.map((item) => (
-                <li key={item.id}>
-                  <div>
-                    <img src={item.image} alt={item.name} />
-                    <div>
-                      <h3>{item.name}</h3>
-                      <p>Price: {item.price}</p>
-                      <br />
-                      <button onClick={() => removeFromCart(item.id)}>Remove</button>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
+        <section className={classes.checkout_final}>
+          <div className="checkout-steps">
+            <div className="checkout-step">
+              <h3>Step 1: Review Your Cart</h3>
+              <ul>
+                {cartItems.map((item) => (
+                  <li key={item.id}>
+                    {item.name} - €{item.price.toFixed(2).toString()}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-        <section className={classes.Checkout_Button}>
-          <div>
-<<<<<<< HEAD
-          <p>Total: {getTotalPrice()}</p>
-=======
-            <p>Total: {getTotalPrice()}</p>
->>>>>>> 34bc235a9ff4f1e31e381a9bd120a41fad3226d1
+            <div className="checkout-step">
+              <h3>Step 2: Enter Delivery Address</h3>
+              <input
+                type="text"
+                placeholder="Enter your address"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                required
+              />
+            </div>
 
-            <Link to="/checkout">
-              <button>Checkout</button>
-            </Link>
+            <div className="checkout-step">
+              <h3>Step 3: Select Payment Method</h3>
+              <select
+                value={paymentMethod}
+                onChange={(e) => setPaymentMethod(e.target.value)}
+                required
+              >
+                <option value="creditCard">Credit Card</option>
+                <option value="debitCard">Debit Card</option>
+                <option value="paypal">PayPal</option>
+              </select>
+            </div>
+
+            {paymentMethod === 'creditCard' && (
+              <div className="checkout-step">
+                <h3>Step 4: Enter Credit Card Information</h3>
+                <input
+                  type="text"
+                  placeholder="Enter your credit card number"
+                  value={creditCardNumber}
+                  onChange={(e) => setCreditCardNumber(e.target.value)}
+                  required
+                />
+              </div>
+            )}
+
+            <div className="checkout-step">
+              <h3>Step 5: Review and Pay</h3>
+              <p>Total: {getTotalPrice()}</p>
+              {paymentSuccess ? (
+                <p>Payment successful. Thank you for your order!</p>
+              ) : (
+                <button onClick={handlePayment}>Pay</button>
+              )}
+            </div>
           </div>
         </section>
-
-
       </main>
     </div>
   );
-};
-
-export default Cart;
+    };
+export default Checkout;

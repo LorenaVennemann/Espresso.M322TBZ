@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../warenkorb.module.css';
-import classes from "../Root.module.css";
-import "../Root.module.css";
+import classes from '../Root.module.css';
 import warenkorbImage from '../warenkorb.png';
 
 interface Product {
   id: string;
   name: string;
-  price: number; 
+  price: number;
   image: string;
 }
 
@@ -28,12 +27,10 @@ const Checkout: React.FC = () => {
 
   const getTotalPrice = () => {
     const totalPrice = cartItems.reduce((total, item) => {
-<<<<<<< HEAD
       if (typeof item.price === 'number') {
-=======
-      if (item.price && typeof item.price === 'number') {
->>>>>>> 34bc235a9ff4f1e31e381a9bd120a41fad3226d1
-        return total + item.price;
+        if (item.price && typeof item.price === 'number') {
+          return total + item.price;
+        }
       }
       return total;
     }, 0);
@@ -41,20 +38,15 @@ const Checkout: React.FC = () => {
   };
 
   const handlePayment = () => {
-<<<<<<< HEAD
-=======
-
->>>>>>> 34bc235a9ff4f1e31e381a9bd120a41fad3226d1
     setTimeout(() => {
       setPaymentSuccess(true);
     }, 2000);
   };
 
-
   return (
     <div className={classes.div}>
       <header>
-        <div className={`${classes["search-bar"]}`}>
+        <div className={`${classes['search-bar']}`}>
           <input type="text" placeholder="Search..." />
         </div>
 
@@ -76,7 +68,7 @@ const Checkout: React.FC = () => {
         </nav>
         <div className={classes.Nav_End}>
           <div className={classes.TOSHOP}>
-            <Link className={`${classes["TOSHOP-link"]}`} to="/shop">
+            <Link className={`${classes['TOSHOP-link']}`} to="/shop">
               Shop
             </Link>
           </div>
@@ -88,39 +80,41 @@ const Checkout: React.FC = () => {
         </div>
       </header>
       <main>
-
         <section className={classes.textbox_start}>
           <h1>Checkout</h1>
         </section>
 
         <section className={classes.checkout_final}>
-
           <div className="checkout-steps">
             <div className="checkout-step">
               <h3>Step 1: Review Your Cart</h3>
               <ul>
                 {cartItems.map((item) => (
                   <li key={item.id}>
-<<<<<<< HEAD
-                  {item.name} - €{item.price.toFixed(2).toString()}
-                </li>
-                
-=======
-                    {item.name} - {item.price}
+                    {item.name} - €{item.price.toFixed(2).toString()}
                   </li>
->>>>>>> 34bc235a9ff4f1e31e381a9bd120a41fad3226d1
                 ))}
               </ul>
             </div>
 
             <div className="checkout-step">
               <h3>Step 2: Enter Delivery Address</h3>
-              <input type="text" placeholder="Enter your address" value={address} onChange={(e) => setAddress(e.target.value)} required />
+              <input
+                type="text"
+                placeholder="Enter your address"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                required
+              />
             </div>
 
             <div className="checkout-step">
               <h3>Step 3: Select Payment Method</h3>
-              <select value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)} required>
+              <select
+                value={paymentMethod}
+                onChange={(e) => setPaymentMethod(e.target.value)}
+                required
+              >
                 <option value="creditCard">Credit Card</option>
                 <option value="debitCard">Debit Card</option>
                 <option value="paypal">PayPal</option>
@@ -143,16 +137,11 @@ const Checkout: React.FC = () => {
             <div className="checkout-step">
               <h3>Step 5: Review and Pay</h3>
               <p>Total: {getTotalPrice()}</p>
-<<<<<<< HEAD
-
-=======
->>>>>>> 34bc235a9ff4f1e31e381a9bd120a41fad3226d1
               {paymentSuccess ? (
                 <p>Payment successful. Thank you for your order!</p>
               ) : (
                 <button onClick={handlePayment}>Pay</button>
               )}
-
             </div>
           </div>
         </section>
@@ -160,6 +149,5 @@ const Checkout: React.FC = () => {
     </div>
   );
 };
+
 export default Checkout;
-
-
