@@ -7,8 +7,6 @@ import classes from "../Root.module.css";
 import warenkorbImage from '../warenkorb.png';
 import { Link } from 'react-router-dom';
 
-
-
 const Shop = () => {
   /* const history = useHistory(); */
   const products = [
@@ -42,6 +40,7 @@ const Shop = () => {
     }
     cart.push(product);
     localStorage.setItem('cart', JSON.stringify(cart));
+    alert("1x " + product.name + "\n Wurde in ihren Warenkorb hinzugefügt. \n \n Wenn Sie fertig sind, gehen Sie zum Warenkorb Icon um Ihren einkaufen abzuschliessen");
   };
 
 

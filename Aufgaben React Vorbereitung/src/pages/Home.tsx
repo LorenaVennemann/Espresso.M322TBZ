@@ -43,7 +43,7 @@ const Home: React.FC = () => {
       <main>
 
         <section className={classes.image_full}>
-          <img src="https://cdn.pixabay.com/photo/2016/04/12/11/19/coffee-1324126_1280.jpg" alt="" />
+          <img src="https://cdn.pixabay.com/photo/2017/04/25/08/02/coffee-beans-2258839_1280.jpg" alt="" />
         </section>
 
         <section className={classes.textbox_center}>

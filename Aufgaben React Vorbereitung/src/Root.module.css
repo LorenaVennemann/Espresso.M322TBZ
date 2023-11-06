@@ -565,3 +565,7 @@ footer.footer h1 {
   background-color: #5C921C;
   color: white;
 }
+
+button {
+  cursor: pointer;
+}
