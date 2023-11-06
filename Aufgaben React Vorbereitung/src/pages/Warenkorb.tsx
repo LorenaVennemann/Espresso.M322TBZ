@@ -97,7 +97,7 @@ const Cart: React.FC = () => {
                     <img src={item.image} alt={item.name} />
                     <div>
                       <h3>{item.name}</h3>
-                      <p>Price: €{item.price}</p>
+                      <p>Price: {item.price}</p>
                       <br />
                       <button onClick={() => removeFromCart(item.id)}>Remove</button>
                     </div>
