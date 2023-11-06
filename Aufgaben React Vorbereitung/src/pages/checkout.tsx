@@ -26,7 +26,13 @@ const Checkout: React.FC = () => {
   }, []);
 
   const getTotalPrice = () => {
-    return cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
+    const totalPrice = cartItems.reduce((total, item) => {
+      if (item.price && typeof item.price === 'number') {
+        return total + item.price;
+      }
+      return total;
+    }, 0);
+    return totalPrice.toFixed(2);
   };
 
   const handlePayment = () => {
@@ -122,7 +128,7 @@ const Checkout: React.FC = () => {
 
             <div className="checkout-step">
               <h3>Step 5: Review and Pay</h3>
-              <p>Total: {getTotalPrice().toFixed(2)}</p>
+              <p>Total: {getTotalPrice()}</p>
               {paymentSuccess ? (
                 <p>Payment successful. Thank you for your order!</p>
               ) : (

@@ -44,8 +44,6 @@ const Shop = () => {
   };
 
 
-
-
   return (
     <div className={classes.div}>
       <header>
