@@ -526,46 +526,57 @@ footer.footer h1 {
   margin-top: 10px;
 }
 
-.contat_form {
-  padding: 20px 20%;
-  background-color: #E1D9D0;
+/* Classes ContactFrom */
+
+.Formular {
+  position: relative;
+  height: 500px;
 }
 
-.contat_form form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding-bottom: 5%;
-}
-
-/* Contact From Classes */
-.contat_form .contact_input {
-  display: flex;
-  flex-direction: column;
-}
-
-.contat_form .contact_input label {
-  font-size: 1.3rem;
-}
-
-.contat_form .contact_input input {
-  padding: 10px;
-  font-size: 1rem;
+.Formular .LeftFOrm {
+  position: absolute;
+  top: 50px;
+  left: 30%;
+  background-color: #90a774;
+  padding: 20px;
   border-radius: 10px;
-  border: none;
+  transform: translateX(-50%);
+  width: 300px;
 }
 
-.contat_form .contact_input input[type="submit"] {
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.contat_form .contact_input input[type="submit"]:hover {
-  background-color: #5C921C;
+.Formular .LeftFOrm * {
   color: white;
 }
+.Formular .LeftFOrm > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
 
-button {
-  cursor: pointer;
+.Formular .LeftFOrm > div > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.Formular .LeftFOrm > div > div a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.Formular .LeftFOrm h1 {
+  font-size: 1.5rem;
+}
+
+.Formular .FormRight {
+  background-color: #E1D9D0;
+  position: absolute;
+  top: 100px;
+  right: 15%;
+  padding: 20px;
+  padding-left: 150px;
+  width: 800px;
+  z-index: -1;
+  height: 350px;
+  border-radius: 10px;
 }
