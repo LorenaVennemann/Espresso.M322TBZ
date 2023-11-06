@@ -558,4 +558,10 @@ footer.footer h1 {
 .contat_form .contact_input input[type="submit"] {
   border: none;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.contat_form .contact_input input[type="submit"]:hover {
+  background-color: #5C921C;
+  color: white;
 }
