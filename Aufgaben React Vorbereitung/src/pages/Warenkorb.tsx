@@ -105,7 +105,7 @@ const Cart: React.FC = () => {
 
         <section className={classes.Checkout_Button}>
           <div>
-            <p>Total: €{getTotalPrice().toFixed(2)}</p>
+            <p>Total: {getTotalPrice().toFixed(2)}</p>
 
             <Link to="/checkout">
               <button>Checkout</button>

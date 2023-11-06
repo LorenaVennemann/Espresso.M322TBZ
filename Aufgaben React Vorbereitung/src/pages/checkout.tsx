@@ -30,21 +30,11 @@ const Checkout: React.FC = () => {
   };
 
   const handlePayment = () => {
-    // Hier würde Ihre tatsächliche Zahlungsverarbeitungslogik eingefügt werden, indem Sie ein Zahlungs-Gateway integrieren.
-
-    // Simulieren einer erfolgreichen Zahlung (ersetzen Sie dies durch echte Zahlungslogik)
+  
     setTimeout(() => {
-      // Hier könnten Sie eine API-Anfrage an Ihr Zahlungs-Gateway senden
-      // und auf die Antwort warten, um den Zahlungsstatus zu überprüfen.
-
-      // Wenn die Zahlung erfolgreich ist, führen Sie die folgenden Schritte aus:
-
-      // 1. Speichern der Bestellinformationen und Zahlungsdetails in Ihrer Datenbank
-      // 2. Versenden einer Bestätigungs-E-Mail an den Kunden
-      // 3. Weiterleitung zur Bestellbestätigungsseite oder Dankesseite
 
       setPaymentSuccess(true);
-    }, 2000); // Hier simulieren wir eine Verzögerung von 2 Sekunden, um die Zahlungsverarbeitung zu zeigen.
+    }, 2000); 
   };
 
   return (
@@ -132,7 +122,7 @@ const Checkout: React.FC = () => {
 
             <div className="checkout-step">
               <h3>Step 5: Review and Pay</h3>
-              <p>Total: €{getTotalPrice().toFixed(2)}</p>
+              <p>Total: {getTotalPrice().toFixed(2)}</p>
               {paymentSuccess ? (
                 <p>Payment successful. Thank you for your order!</p>
               ) : (
